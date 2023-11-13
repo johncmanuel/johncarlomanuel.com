@@ -2,6 +2,18 @@
 
 Personal website version version 4. Aside from showing the usual information on a portfolio site, this will embed some cool stuff (on the frontend) such as video games and visuals.
 
+Some ideas that came to mind as of now:
+
+1. custom retro-like game library
+   -> would contain fighting, card, puzzle, and platform games, all built into website.
+   will keep it simple tho, i don't want to overwhelm myself.
+   -> would need to use a node server for websockets if wanting to build multiplayer games
+   -> could experiment with running Ren'Py visual novels in browser using WebAssembly. see <https://www.renpy.org/doc/html/web.html>.
+   this would possibly require another server to serve these games.
+2. blog (carry over blog posts from personal website v3)
+3. webring with close friends
+   -> see Diamond's webring: <https://github.com/diamondburned/acmfriends-webring>
+
 ## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
