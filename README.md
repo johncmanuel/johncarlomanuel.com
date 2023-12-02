@@ -20,6 +20,7 @@ Some ideas that came to mind as of now:
    -> see Diamond's webring: <https://github.com/diamondburned/acmfriends-webring>
 4. for shortlinks at johncarlomanuel.com/\*, store them as a static json and build another tool
    to create these shortlinks. see <https://github.com/acmcsufoss/shorter/blob/main/docs/HANDBOOK.md>
+5. dedicate a page to buster and blueberry, my amazing dogs :)
 
 ## create-svelte
 
