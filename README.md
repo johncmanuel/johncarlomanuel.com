@@ -15,6 +15,7 @@ Some ideas that came to mind as of now:
    -> would need to use a node server for websockets if wanting to build multiplayer games
    -> could experiment with running Ren'Py visual novels in browser using WebAssembly. see <https://www.renpy.org/doc/html/web.html>.
    this would possibly require another server to serve these games.
+   -> Thus, may need to create different repos for different apps, then serve them under games.johncarlomanuel.com subdomain.
 2. blog (carry over blog posts from personal website v3)
 3. webring with close friends
    -> see Diamond's webring: <https://github.com/diamondburned/acmfriends-webring>
