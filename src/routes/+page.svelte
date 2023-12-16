@@ -18,15 +18,41 @@
 <Container>
   <div class="divider" />
   <div id="projects">
-    <h1 class="text-5xl font-bold">Projects</h1>
-    <Container>
+    <h1 class="text-5xl font-bold pb-10">Projects</h1>
+    <div
+      class="grid sm:grid-cols-1 md:grid-cols-2 md:gap-11 lg:grid-cols-2 lg:gap-11 xl:grid-cols-3 xl:gap-11"
+    >
       <Project
         projectName="hello"
         tags={["nextjs", "svelte"]}
         description="game"
         imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
       />
-    </Container>
+      <Project
+        projectName="hello"
+        tags={["nextjs", "svelte"]}
+        description="game"
+        imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+      />
+      <Project
+        projectName="hello"
+        tags={["nextjs", "svelte"]}
+        description="game"
+        imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+      />
+      <Project
+        projectName="hello"
+        tags={["nextjs", "svelte"]}
+        description="game"
+        imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+      />
+      <Project
+        projectName="hello"
+        tags={["nextjs", "svelte"]}
+        description="game"
+        imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+      />
+    </div>
   </div>
 </Container>
 
