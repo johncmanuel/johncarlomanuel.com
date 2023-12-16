@@ -9,11 +9,11 @@
 
 <div class="container">
   <div class="container">
-    <div class="divider" />
+    <div class="divider divider-primary" />
     <div id="experience">
       <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Experience</h1>
     </div>
-    <div class="divider" />
+    <div class="divider divider-primary" />
   </div>
   <div class="container">
     <div id="projects">
@@ -54,5 +54,5 @@
       </div>
     </div>
   </div>
-  <div class="divider" />
+  <div class="divider divider-primary" />
 </div>

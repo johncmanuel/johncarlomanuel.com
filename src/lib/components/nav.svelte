@@ -2,8 +2,9 @@
   const links = [
     { href: "#about", text: "About" },
     { href: "#experience", text: "Experience" },
-    { href: "#projects", text: "Projects" },
-    { href: "/blog", text: "Blog" }
+    { href: "#projects", text: "Projects" }
+    // my blog!!!
+    // { href: "/registers", text: "Registers" }
   ];
 </script>
 

@@ -7,7 +7,9 @@
 </script>
 
 <a href={projectUrl}>
-  <div class="card w-96 bg-base-100 shadow-xl object-contain md:object-scale-down mx-auto">
+  <div
+    class="card w-96 bg-base-100 shadow-xl object-contain md:object-scale-down mx-auto scale-75 lg:scale-100"
+  >
     <figure>
       <img src={imageUrl} alt={projectName} />
     </figure>
