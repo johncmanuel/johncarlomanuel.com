@@ -12,7 +12,9 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "devDependencies": {
+    "@iconify-json/fa6-brands": "^1.1.18",
     "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/enhanced-img": "^0.1.6",
     "@sveltejs/kit": "^1.20.4",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -29,6 +31,7 @@
     "tailwindcss": "^3.3.5",
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
+    "unplugin-icons": "^0.18.1",
     "vite": "^4.4.2"
   },
   "type": "module",
