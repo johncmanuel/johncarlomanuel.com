@@ -22,6 +22,7 @@ Some ideas that came to mind as of now:
 4. for shortlinks at johncarlomanuel.com/\*, store them as a static json and build another tool
    to create these shortlinks. see <https://github.com/acmcsufoss/shorter/blob/main/docs/HANDBOOK.md>
 5. dedicate a page to buster and blueberry, my amazing dogs :)
+6. cool 404 page platformer game
 
 ## create-svelte
 
