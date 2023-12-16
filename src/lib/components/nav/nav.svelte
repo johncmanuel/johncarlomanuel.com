@@ -10,6 +10,7 @@
 <div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
+      <!-- Mobile -->
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,6 @@
           /></svg
         >
       </div>
-      <!-- Mobile -->
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <ul
         tabindex="0"
@@ -41,7 +41,7 @@
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       {#each links as link}
-        <li class="text-l"><a href={link.href}>{link.text}</a></li>
+        <li class="text-lg"><a href={link.href}>{link.text}</a></li>
       {/each}
     </ul>
   </div>

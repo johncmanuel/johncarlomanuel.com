@@ -21,7 +21,7 @@
 <footer class="footer items-center p-4 bg-neutral text-neutral-content">
   <aside class="items-center grid-flow-col">
     <!-- TODO: get a better image -->
-    <enhanced:img src="/static/favicon/favicon-32x32.png" alt="John Carlo Manuel Logo" />
+    <img src="/favicon/favicon-32x32.png" alt="John Carlo Manuel logo" />
     <p>
       Copyright © {new Date().getFullYear()} John Carlo Manuel - All rights reserved
     </p>
