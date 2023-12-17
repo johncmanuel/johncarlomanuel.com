@@ -18,6 +18,7 @@
     <div class="divider divider-primary px-4 md:px-10" />
     <div id="experience" class="container">
       <h1 class="text-5xl font-bold pb-16 text-center">Experience</h1>
+      <!-- TODO: As the list of experience gets bigger, may need to move experiences to another page (/experience). -->
       <Timeline />
     </div>
   </div>
