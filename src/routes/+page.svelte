@@ -15,21 +15,21 @@
 
 <div class="container">
   <div class="container">
-    <div class="divider divider-primary px-4 md:px-0" />
+    <div class="divider divider-primary px-4 md:px-10" />
     <div id="experience" class="container">
       <h1 class="text-5xl font-bold pb-16 text-center">Experience</h1>
       <Timeline />
     </div>
   </div>
   <div class="container" id="projects">
-    <div class="divider divider-primary px-4 md:px-0" />
+    <div class="divider divider-primary px-4 md:px-10" />
     <h1 class="text-5xl font-bold pb-16 text-center">Featured Projects</h1>
     <Projects />
   </div>
   <div class="container" id="education">
-    <div class="divider divider-primary px-4 md:px-0" />
+    <div class="divider divider-primary px-4 md:px-10" />
     <h1 class="text-5xl font-bold pb-16 text-center">Education</h1>
     <Education />
   </div>
-  <div class="divider divider-primary px-4 md:px-0" />
+  <div class="divider divider-primary px-4 md:px-10" />
 </div>
