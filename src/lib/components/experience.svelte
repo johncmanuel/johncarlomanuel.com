@@ -13,7 +13,7 @@
     <CheckIcon />
   </div>
   <div class="timeline-end mb-4 lg:mb-10 max-w-md lg:max-w-2xl">
-    <div class="text-lg font-black">{jobTitle} | {company}</div>
+    <div class="text-lg font-black">{jobTitle} @ {company}</div>
     <time class="font-mono italic mb-2">{timestamp}</time>
     <!-- <div class="text-lg font-bold py-4">{jobTitle}</div> -->
     <ul class="text-md pt-6 list-disc px-4 lg:px-6 max-w-lg">
