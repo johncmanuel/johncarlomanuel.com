@@ -16,10 +16,10 @@
   ];
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-4">
   <ul class="p-4">
     {#each colleges as college}
-      <li class="pb-10">
+      <li class="pb-8 lg:pb-10">
         <a href={college.url}>
           <h2 class="text-2xl">{college.name}</h2>
         </a>
