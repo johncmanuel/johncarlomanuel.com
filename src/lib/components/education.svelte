@@ -20,7 +20,7 @@
   <ul class="p-4">
     {#each colleges as college}
       <li class="pb-8 lg:pb-10">
-        <a href={college.url}>
+        <a href={college.url} class="no-underline hover:underline">
           <h2 class="text-2xl">{college.name}</h2>
         </a>
         <h3 class="text-lg">{college.degree}</h3>

@@ -51,3 +51,10 @@
     />
   {/each}
 </div>
+<div class="flex flex-col items-center py-10">
+  <a
+    class="btn btn-ghost mx-auto btn-lg text-lg"
+    href="https://github.com/johncmanuel/"
+    target="_blank">See more on my GitHub</a
+  >
+</div>

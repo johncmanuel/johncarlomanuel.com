@@ -66,6 +66,7 @@
       timestamp={exp.timestamp}
       jobTitle={exp.title}
       company={exp.company}
+      url={exp.url}
     />
   {/each}
 </ul>
