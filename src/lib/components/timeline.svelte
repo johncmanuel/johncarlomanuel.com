@@ -6,6 +6,12 @@
   // Data related to my resume can be placed in a separate, public repository
   const experiences = [
     {
+      company: "Association for Computing Machinery, CSUF Chapter",
+      timestamp: "Sep 2023 - Present",
+      title: "Open Source Developer",
+      url: "https://acmcsuf.com/"
+    },
+    {
       bullet_points: [
         "Coordinated 4 club projects in club with 100+ members through GitHub and Discord",
         "Gave presentations and workshops on software engineering project workflows and version control such as Git and GitHub",

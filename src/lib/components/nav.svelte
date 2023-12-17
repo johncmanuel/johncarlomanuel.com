@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
+  import Hamburger from "./hamburger.svelte";
   const links = [
-    { href: "#about", text: "About" },
-    { href: "#experience", text: "Experience" },
-    { href: "#projects", text: "Projects" },
+    { href: "/#about", text: "About" },
+    { href: "/#experience", text: "Experience" },
+    { href: "/#projects", text: "Projects" },
+    { href: "/#education", text: "Education" },
     // my blog!!!
     { href: "/registers", text: "Registers (TBA)" }
   ];
@@ -10,22 +12,10 @@
 
 <div class="navbar bg-base-100">
   <div class="navbar-start">
+    <!-- Mobile -->
     <div class="dropdown">
-      <!-- Mobile -->
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          /></svg
-        >
+        <Hamburger />
       </div>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
       <ul
@@ -39,6 +29,7 @@
     </div>
     <a class="btn btn-ghost text-xl" href="/">John Carlo Manuel</a>
   </div>
+  <!-- Desktop -->
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       {#each links as link}

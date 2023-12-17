@@ -20,20 +20,16 @@
       <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Experience</h1>
       <Timeline />
     </div>
-    <div class="divider divider-primary" />
   </div>
-  <div class="container">
-    <div id="projects">
-      <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Featured Projects</h1>
-      <Projects />
-    </div>
+  <div class="container" id="projects">
     <div class="divider divider-primary" />
+    <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Featured Projects</h1>
+    <Projects />
   </div>
-  <div class="container">
-    <div id="education">
-      <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Education</h1>
-      <Education />
-    </div>
+  <div class="container" id="education">
+    <div class="divider divider-primary" />
+    <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Education</h1>
+    <Education />
   </div>
   <div class="divider divider-primary" />
 </div>

@@ -6,9 +6,9 @@
   export let projectUrl = "https://github.com/";
 </script>
 
-<a href={projectUrl}>
+<a href={projectUrl} target="_blank">
   <div
-    class="card w-96 bg-base-100 shadow-xl object-contain md:object-scale-down mx-auto scale-75 lg:scale-100"
+    class="card w-96 bg-base-100 shadow-xl object-contain md:object-scale-down mx-auto scale-75 lg:scale-100 bg-neutral"
   >
     <figure>
       <img src={imageUrl} alt={projectName} />
