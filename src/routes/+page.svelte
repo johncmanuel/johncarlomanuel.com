@@ -5,6 +5,10 @@
   import Education from "$lib/components/education.svelte";
 </script>
 
+<svelte:head>
+  <title>John Carlo Manuel</title>
+</svelte:head>
+
 <div id="about">
   <Hero />
 </div>
