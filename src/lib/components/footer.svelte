@@ -24,7 +24,7 @@
   </nav>
   <aside>
     <p>
-      Copyright © {new Date().getFullYear()} John Carlo Manuel - All rights reserved
+      Copyright © {new Date().getFullYear()} John Carlo Manuel - All rights reserved.
     </p>
   </aside>
 </footer>

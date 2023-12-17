@@ -2,6 +2,7 @@
   import Hero from "$lib/components/hero.svelte";
   import Timeline from "$lib/components/timeline.svelte";
   import Projects from "$lib/components/projects.svelte";
+  import Education from "$lib/components/education.svelte";
 </script>
 
 <div id="about">
@@ -27,6 +28,7 @@
   <div class="container">
     <div id="education">
       <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Education</h1>
+      <Education />
     </div>
   </div>
   <div class="divider divider-primary" />
