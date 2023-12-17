@@ -59,7 +59,7 @@
   ];
 </script>
 
-<ul class="timeline timeline-snap-icon timeline-compact timeline-vertical p-5 lg:px-[30%]">
+<ul class="timeline timeline-snap-icon timeline-compact timeline-vertical p-5 lg:px-[35%]">
   {#each experiences as exp}
     <Experience
       bulletPoints={exp.bullet_points}

@@ -16,7 +16,7 @@
   ];
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-4 pl-[5%] lg:pl-[15%]">
   <ul class="p-4">
     {#each colleges as college}
       <li class="pb-8 lg:pb-10">

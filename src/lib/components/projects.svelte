@@ -40,7 +40,7 @@
   ];
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-2 md:gap-11 lg:gap-11 xl:grid-cols-3 xl:gap-11">
+<div class="grid grid-cols-1 md:grid-cols-2 md:gap-11 lg:gap-11 xl:grid-cols-3 xl:gap-11 py-6">
   {#each projects as proj}
     <Project
       projectName={proj.name}
