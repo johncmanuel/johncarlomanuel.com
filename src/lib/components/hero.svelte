@@ -18,12 +18,20 @@
       <div
         class="py-12 lg:py-0 join join-vertical flex flex-col items-center lg:join-horizontal gap-12 lg:gap-4"
       >
-        <a class="btn btn-lg btn-primary join-item" href="/">Resume</a>
-        <a class="btn btn-lg btn-secondary join-item" href="https://github.com/johncmanuel/"
-          >GitHub</a
+        <a
+          class="btn btn-lg btn-primary join-item"
+          target="_blank"
+          href="https://drive.google.com/file/d/1-mMm_LY_4rdwsDWA0RjQl2ZYDdKTMq-q/view?usp=sharing"
+          >Resume</a
+        >
+        <a
+          class="btn btn-lg btn-secondary join-item"
+          target="_blank"
+          href="https://github.com/johncmanuel/">GitHub</a
         >
         <a
           class="btn btn-lg btn-accent join-item"
+          target="_blank"
           href="https://www.linkedin.com/in/johncarlomanuel/">LinkedIn</a
         >
       </div>

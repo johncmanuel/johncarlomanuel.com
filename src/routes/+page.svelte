@@ -1,7 +1,7 @@
 <script>
   import Hero from "$lib/components/hero.svelte";
-  import Project from "$lib/components/project.svelte";
   import Timeline from "$lib/components/timeline.svelte";
+  import Projects from "$lib/components/projects.svelte";
 </script>
 
 <div id="about">
@@ -19,41 +19,8 @@
   </div>
   <div class="container">
     <div id="projects">
-      <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Projects</h1>
-      <div>
-        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-11 lg:gap-11 xl:grid-cols-3 xl:gap-11">
-          <Project
-            projectName="hello"
-            tags={["nextjs", "svelte"]}
-            description="game"
-            imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          />
-          <Project
-            projectName="hello"
-            tags={["nextjs", "svelte"]}
-            description="game"
-            imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          />
-          <Project
-            projectName="hello"
-            tags={["nextjs", "svelte"]}
-            description="game"
-            imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          />
-          <Project
-            projectName="hello"
-            tags={["nextjs", "svelte"]}
-            description="game"
-            imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          />
-          <Project
-            projectName="hello"
-            tags={["nextjs", "svelte"]}
-            description="game"
-            imageUrl="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          />
-        </div>
-      </div>
+      <h1 class="text-5xl font-bold pb-10 text-center lg:text-left">Featured Projects</h1>
+      <Projects />
     </div>
     <div class="divider divider-primary" />
   </div>

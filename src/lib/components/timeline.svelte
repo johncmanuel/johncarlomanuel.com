@@ -2,7 +2,8 @@
   import Experience from "./experience.svelte";
 
   // Basis of my resume in JSON format
-  // TODO: Use as data to use when creating resume
+  // TODO: Use as data when creating resume
+  // Data related to my resume can be placed in a separate, public repository
   const experiences = [
     {
       bullet_points: [
@@ -33,7 +34,7 @@
         "Trained and fine-tuned SSD-MobileNet v2 model using dataset with 1500+ images of glove to detect the latter",
         "Collaborated closely with computer engineering researchers to successfully integrate glove with an EMG system using serial communication protocols to help glove respond to nearby objects"
       ],
-      timestamp: "Jun 2022 – Aug 2022",
+      timestamp: "Jun 2022 - Aug 2022",
       title: "Computer Vision Research Intern",
       url: "http://sfsu-miclab.org/",
       company: "MIC Lab, San Francisco State University"
@@ -41,7 +42,7 @@
     {
       bullet_points: [
         "Collaborated with team consisting of a developer and two designers to design and develop a remote-controlled vehicle for navigating hazardous environments, showcasing effective teamwork and technical skills.",
-        "Led technical development and documentation with developer to design vehicle’s features and functionalities such as light sensors, joystick controls, and Bluetooth connectivity using Arduino and C++",
+        "Led technical development and documentation with developer to design vehicle's features and functionalities such as light sensors, joystick controls, and Bluetooth connectivity using Arduino and C++",
         "Authored project documentation on vehicle and delivered and presented the project to audience of 15+ students and teachers"
       ],
       timestamp: "Jan 2022",
@@ -52,7 +53,7 @@
   ];
 </script>
 
-<ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+<ul class="timeline timeline-snap-icon timeline-compact timeline-vertical p-5 lg:px-[30%]">
   {#each experiences as exp}
     <Experience
       bulletPoints={exp.bullet_points}

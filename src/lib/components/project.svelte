@@ -16,7 +16,6 @@
     <div class="card-body">
       <h2 class="card-title">
         {projectName}
-        <!-- <div class="badge badge-secondary">NEW</div> -->
       </h2>
       <p>{description}</p>
       <div class="card-actions justify-end">
