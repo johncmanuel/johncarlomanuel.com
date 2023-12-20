@@ -23,6 +23,7 @@ Some ideas that came to mind as of now:
    to create these shortlinks. see <https://github.com/acmcsufoss/shorter/blob/main/docs/HANDBOOK.md>
 5. dedicate a page to buster and blueberry, my amazing dogs :)
 6. cool 404 page platformer game
+7. make experience page to list all my experiences (could automatically be done via LinkedIn API since i tend to list my experiences there first)
 
 ## create-svelte
 
