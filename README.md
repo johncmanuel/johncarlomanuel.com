@@ -24,6 +24,11 @@ Some ideas that came to mind as of now:
 5. dedicate a page to buster and blueberry, my amazing dogs :)
 6. cool 404 page platformer game
 7. make experience page to list all my experiences (could automatically be done via LinkedIn API since i tend to list my experiences there first)
+8. create an interactive library of the video games and music via steam and spotify apis
+   -> cache it on my DB (prob firestore)
+   -> see <https://games.thicc-thighs.de/>
+9. add special fx on website according to the dates
+   -> i.e snowflakes falling from top of screen to down during December
 
 ## create-svelte
 
