@@ -29,6 +29,7 @@ Some ideas that came to mind as of now:
    -> see <https://games.thicc-thighs.de/>
 9. add special fx on website according to the dates
    -> i.e snowflakes falling from top of screen to down during December
+10. maybe one day make a page about my current worldbuilding journey
 
 ## create-svelte
 
