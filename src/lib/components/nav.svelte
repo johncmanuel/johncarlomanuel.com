@@ -6,7 +6,7 @@
     { href: "/#projects", text: "Projects" },
     { href: "/#education", text: "Education" },
     // my blog!!!
-    { href: "/registers", text: "Registers (TBA)" }
+    { href: "http://registers.johncarlomanuel.com/", text: "Registers" }
   ];
 </script>
 
