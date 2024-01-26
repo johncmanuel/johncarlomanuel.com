@@ -1,8 +1,29 @@
 <script lang="ts">
-  const imagePaths = Object.keys(import.meta.glob("$lib/assets/dogs/*.{JPG,jpg,png,PNG}"));
+  // const imagePaths = Object.keys(
+  //   import.meta.glob("$lib/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
+  //     eager: true
+  //   })
+  // );
+
+  // TODO: find a better way to get all images in a folder that works in
+  // production (the above solution doesn't work)
+  const imagePaths = [
+    "assets/dogs/bl1.png",
+    "assets/dogs/bl2.png",
+    "assets/dogs/bl3.png",
+    "assets/dogs/bl4.png",
+    "assets/dogs/bl5.png",
+    "assets/dogs/bu1.png",
+    "assets/dogs/bu2.png",
+    "assets/dogs/bu3.png",
+    "assets/dogs/bu4.png",
+    "assets/dogs/bu5.png",
+    "assets/dogs/bu6.png"
+  ];
+
   const images = imagePaths.map((path) => {
     const alt = path.includes("bu") ? "Buster" : "Blueberry";
-    return { path, alt: alt };
+    return { path, alt };
   });
 </script>
 
