@@ -21,7 +21,7 @@
       <a href="https://www.youtube.com/@johncarlomanuel" target="_blank">
         <Youtube />
       </a>
-      <a href="mailto:mail@johncarlomanuel.com" target="_blank">
+      <a href="mailto:me@johncarlomanuel.com" target="_blank">
         <Email />
       </a>
     </div>
