@@ -4,6 +4,7 @@
   // Basis of my resume in JSON format
   // TODO: Use as data when creating resume
   // Data related to my resume can be placed in a separate, public repository
+  // TODO: As the list of experience gets bigger, may need to move experiences to another page (/experience).
   const experiences = [
     {
       company: "Association for Computing Machinery, CSUF Chapter",

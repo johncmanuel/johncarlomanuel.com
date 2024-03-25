@@ -15,6 +15,7 @@
         of engineering, I enjoy diving into creative endeavors such as writing and worldbuilding.
         I'm also a cool gamer that mainly plays (MMO)RPGs and narrative-driven games.
       </p>
+      <p class="py-6">See my resume for experience.</p>
       <div
         class="py-12 lg:py-0 join join-vertical flex flex-col items-center lg:join-horizontal gap-12 lg:gap-4"
       >
