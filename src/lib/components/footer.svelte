@@ -4,9 +4,11 @@
   import Twitter from "virtual:icons/fa6-brands/twitter";
   import Youtube from "virtual:icons/fa6-brands/youtube";
   import Email from "virtual:icons/fa6-solid/envelope";
+  import Webring from "./webring.svelte";
 </script>
 
 <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+  <Webring />
   <nav>
     <div class="grid grid-flow-row md:grid-flow-col gap-16 lg:gap-12">
       <a href="https://github.com/johncmanuel/" target="_blank">
