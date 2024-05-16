@@ -7,8 +7,14 @@
     await import("libwebring/dist/webring.css");
   });
 
-  const webringUrl =
-    "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";
+  export let name = "john";
+  export let src: string | null = null;
+
+  $: _src = src ?? undefined;
+
+  $: console.log(_src);
 </script>
 
-<webring-element name="john" src={webringUrl} />
+{#if _src}
+  <webring-element {name} src={_src} />
+{/if}
