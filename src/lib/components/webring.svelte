@@ -16,5 +16,22 @@
 </script>
 
 {#if _src}
-  <webring-element {name} src={_src} />
+  <webring-element {name} src={_src} class="py-4">
+    <section class="webring flex flex-col center space-y-6">
+      <div class="ring text-center text-lg place-self-center" />
+      <div class="grid grid-cols-3 grow">
+        <a
+          class="left link link-hover text-left text-base place-self-start before:content-['←']"
+          target="_blank"
+          href={"#"}>a</a
+        >
+        <span class="middle text-center text-base place-self-center" />
+        <a
+          class="right link link-hover text-right text-base place-self-end after:content-['→']"
+          target="_blank"
+          href={"#"}>a</a
+        >
+      </div>
+    </section>
+  </webring-element>
 {/if}
