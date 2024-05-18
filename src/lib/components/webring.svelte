@@ -19,7 +19,7 @@
   <webring-element {name} src={_src} class="py-4">
     <section class="webring flex flex-col center space-y-6">
       <div class="ring text-center text-lg place-self-center" />
-      <div class="grid grid-cols-3 grow">
+      <div class="grid grid-cols-3 gap-24">
         <a
           class="left link link-hover text-left text-base place-self-start before:content-['←']"
           target="_blank"
