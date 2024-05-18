@@ -4,6 +4,10 @@
   import Twitter from "virtual:icons/fa6-brands/twitter";
   import Youtube from "virtual:icons/fa6-brands/youtube";
   import Email from "virtual:icons/fa6-solid/envelope";
+  import Webring from "./webring.svelte";
+
+  const skylineCSCWebring =
+    "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";
 </script>
 
 <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
@@ -26,6 +30,7 @@
       </a>
     </div>
   </nav>
+  <Webring src={skylineCSCWebring} />
   <aside>
     <p>
       Copyright © {new Date().getFullYear()} John Carlo Manuel - All rights reserved.
