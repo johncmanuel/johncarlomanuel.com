@@ -3,7 +3,7 @@
   <div class="hero-content flex-col lg:flex-row-reverse">
     <!-- m:max-w-0 lg:max-w-sm -->
     <img
-      src="/assets/avatar.jpg"
+      src="/assets/avatar.webp"
       class="object-contain md:object-scale-down max-w-xs md:max-w-sm rounded-lg shadow-2xl"
       alt="John Carlo Manuel"
     />
