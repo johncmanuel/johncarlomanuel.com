@@ -18,7 +18,11 @@
 {#if _src}
   <webring-element {name} src={_src} class="py-4">
     <section class="webring flex flex-col center space-y-6">
-      <div class="ring text-center text-lg place-self-center" />
+      <div class="flex justify-center items-center">
+        <div class="ring text-center text-lg" />
+        <!-- debating whether to keep the src link or not... -->
+        <a class="ml-2 link link-hover text-lg text-center" href={_src} target="_blank">(src)</a>
+      </div>
       <div class="grid grid-cols-3 gap-24">
         <a
           class="left link link-hover text-left text-base place-self-start before:content-['←']"
