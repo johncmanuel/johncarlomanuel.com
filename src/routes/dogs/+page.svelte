@@ -1,15 +1,11 @@
 <script lang="ts">
-  // const imagePaths = Object.keys(
-  //   import.meta.glob("$lib/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
-  //     query: {
-  //       enhanced: true
-  //     }
-  //   })
-  // );
-
+  // See https://www.youtube.com/watch?v=HVxFcRSHj5s
+  // for more info on SvelteKit's enhancedimg package.
+  // This basically helps with image optimization
   const images = import.meta.glob("$lib/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
     query: {
       enhanced: true
+      // eager: true
     }
   });
   const imagePaths = Object.keys(images);
