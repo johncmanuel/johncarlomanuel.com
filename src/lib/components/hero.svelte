@@ -6,6 +6,8 @@
       src="/assets/avatar.webp"
       class="object-contain md:object-scale-down max-w-xs md:max-w-sm rounded-lg shadow-2xl"
       alt="John Carlo Manuel"
+      loading="eager"
+      fetchpriority="high"
     />
     <div>
       <h1 class="text-5xl font-bold text-center lg:text-left">Hello, world!</h1>
