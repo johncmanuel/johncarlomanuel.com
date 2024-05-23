@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "John Carlo Manuel",
+  "givenName": "John Carlo",
+  "familyName": "Manuel",
+  "url": ["https://www.johncarlomanuel.com"],
+  "sameAs": ["https://github.com/johncmanuel"],
+  "email": ["mail@johncarlomanuel.com"],
+  "gender": "male",
+  "description": "A computer science major and software engineer :)",
+  "affiliation": ["California State University, Fullerton", "ACM"],
+  "knowsLanguage": ["en"]
+}
