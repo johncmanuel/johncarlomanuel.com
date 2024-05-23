@@ -2,10 +2,13 @@
   // See https://www.youtube.com/watch?v=HVxFcRSHj5s
   // for more info on SvelteKit's enhancedimg package.
   // This basically helps with image optimization
-  const images = import.meta.glob("$lib/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
+
+  // Vite be complaining a lot about using this method to import from
+  // /static. But it still works.
+  const images = import.meta.glob("/static/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
     query: {
-      enhanced: true
-      // eager: true
+      enhanced: true,
+      eager: true
     }
   });
   const imagePaths = Object.keys(images);
