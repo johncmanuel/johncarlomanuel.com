@@ -16,21 +16,18 @@ Some ideas that came to mind as of now:
    -> could experiment with running Ren'Py visual novels in browser using WebAssembly. see <https://www.renpy.org/doc/html/web.html>.
    this would possibly require another server to serve these games.
    -> Thus, may need to create different repos for different apps, then serve them under games.johncarlomanuel.com subdomain.
-2. blog (carry over blog posts from personal website v3)
-3. webring with close friends
+2. webring with close friends
    -> see Diamond's webring: <https://github.com/diamondburned/acmfriends-webring>
-4. for shortlinks at johncarlomanuel.com/\*, store them as a static json and build another tool
+3. for shortlinks at johncarlomanuel.com/\*, store them as a static json and build another tool
    to create these shortlinks. see <https://github.com/acmcsufoss/shorter/blob/main/docs/HANDBOOK.md>
-5. dedicate a page to buster and blueberry, my amazing dogs :)
-6. cool 404 page platformer game
-7. make experience page to list all my experiences (could automatically be done via LinkedIn API since i tend to list my experiences there first)
-8. create an interactive library of the video games and music via steam and spotify apis
+4. cool 404 page platformer game
+5. make experience page to list all my experiences (could automatically be done via LinkedIn API since i tend to list my experiences there first)
+6. create an interactive library of the video games and music via steam and spotify apis
    -> cache it on my DB (prob firestore)
    -> see <https://games.thicc-thighs.de/>
-9. add special fx on website according to the dates
+7. add special fx on website according to the dates
    -> i.e snowflakes falling from top of screen to down during December
    -> can be a game where you click snowflakes and get points saved in localstorage
-10. maybe one day make a page about my current worldbuilding journey
 
 ## create-svelte
 
