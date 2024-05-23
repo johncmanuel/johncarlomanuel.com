@@ -8,7 +8,7 @@
   const images = import.meta.glob("/static/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
     query: {
       enhanced: true,
-      eager: true
+      // eager: true
     }
   });
   const imagePaths = Object.keys(images);
