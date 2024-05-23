@@ -3,14 +3,14 @@
 </script>
 
 <svelte:head>
-  <title>John Carlo Manuel / {$page.status || 404}</title>
+  <title>{$page.status || 404} / John Carlo Manuel</title>
 </svelte:head>
 
 <section title={$page.error?.message}>
   <div class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <h1 class="text-5xl font-bold pb-10 text-center lg:pb-20">404 - Not Found</h1>
+        <h1 class="text-5xl font-bold pb-10 text-center lg:pb-20">{$page.status} - {$page.error?.message}</h1>
         <img
           src="/assets/chopper.gif"
           class="scale-100 pb-10 lg:scale-125 lg:pb-20"
