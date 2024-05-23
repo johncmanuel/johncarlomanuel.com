@@ -1,7 +1,7 @@
 {
   "name": "johncarlomanuel.com",
   "short_name": "johncarlomanuel",
-  "start_url": ".",
+  "start_url": "/",
   "offline_enabled": true,
   "icons": [
     {
