@@ -14,7 +14,12 @@
   <div class="navbar-start">
     <!-- Mobile -->
     <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+      <div
+        tabindex="0"
+        role="button"
+        class="btn btn-ghost lg:hidden"
+        aria-label="View navigation links"
+      >
         <Hamburger />
       </div>
       <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -27,7 +32,7 @@
         {/each}
       </ul>
     </div>
-    <a class="btn btn-ghost text-xl" href="/">John Carlo Manuel</a>
+    <a class="btn btn-ghost text-xl" href="/" aria-label="Go to Homepage">John Carlo Manuel</a>
   </div>
   <!-- Desktop -->
   <div class="navbar-center hidden lg:flex">

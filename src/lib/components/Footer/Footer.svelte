@@ -13,19 +13,19 @@
 <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
   <nav>
     <div class="grid grid-flow-row md:grid-flow-col gap-16 lg:gap-12">
-      <a href="https://github.com/johncmanuel/" target="_blank">
+      <a href="https://github.com/johncmanuel/" target="_blank" aria-label="GitHub">
         <GitHub />
       </a>
-      <a href="https://www.linkedin.com/in/johncarlomanuel/" target="_blank">
+      <a href="https://www.linkedin.com/in/johncarlomanuel/" target="_blank" aria-label="LinkedIn">
         <LinkedIn />
       </a>
-      <a href="https://twitter.com/johncmanuel" target="_blank">
+      <a href="https://twitter.com/johncmanuel" target="_blank" aria-label="Twitter">
         <Twitter />
       </a>
-      <a href="https://www.youtube.com/@johncarlomanuel" target="_blank">
+      <a href="https://www.youtube.com/@johncarlomanuel" target="_blank" aria-label="YouTube">
         <Youtube />
       </a>
-      <a href="mailto:me@johncarlomanuel.com" target="_blank">
+      <a href="mailto:me@johncarlomanuel.com" target="_blank" aria-label="Email">
         <Email />
       </a>
     </div>
