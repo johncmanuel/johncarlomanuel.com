@@ -3,11 +3,14 @@
   // for more info on SvelteKit's enhancedimg package.
   // This basically helps with image optimization
 
+  import MetaTags from "$components/SEO/MetaTags.svelte";
+  import { page } from "$app/stores";
+
   // Vite be complaining a lot about using this method to import from
   // /static. But it still works.
   const images = import.meta.glob("/static/assets/dogs/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}", {
     query: {
-      enhanced: true,
+      enhanced: true
       // eager: true
     }
   });
@@ -19,7 +22,30 @@
     const alt = path.includes("bu") ? "Buster" : "Blueberry";
     return { src: imagePath, alt };
   };
+
+  const currUrl = new URL($page.url).href;
 </script>
+
+<MetaTags
+  title="Dogs"
+  description="Pictures of my beautiful dogs. :)"
+  author="John Carlo Manuel"
+  twitter={{
+    card: "summary_large_image",
+    title: "Dogs",
+    description: "Pictures of my beautiful dogs :) Here's Blueberry!",
+    image: "/assets/dogs/bl3.png",
+    imageAlt: "Blueberry",
+    handle: "@johncmanuel"
+  }}
+  openGraph={{
+    title: "Dogs",
+    description: "Pictures of my beautiful dogs :) Here's Buster!",
+    url: currUrl,
+    image: "/assets/dogs/bu2.png",
+    imageAlt: "Buster"
+  }}
+/>
 
 <div class="container">
   <h1 class="text-5xl font-bold py-16 text-center">My beautiful dogs: Blueberry and Buster :)</h1>
