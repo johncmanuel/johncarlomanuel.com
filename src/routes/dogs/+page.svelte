@@ -24,23 +24,26 @@
   };
 
   const currUrl = new URL($page.url).href;
+  const desc = "Pictures of my beautiful dogs. :)";
+  const title = "The best dogs in the whole world!";
 </script>
 
 <MetaTags
-  title="Dogs"
-  description="Pictures of my beautiful dogs. :)"
+  {title}
+  titleTemplate="%s | John Carlo Manuel"
+  description={desc}
   author="John Carlo Manuel"
   twitter={{
     card: "summary_large_image",
-    title: "Dogs",
-    description: "Pictures of my beautiful dogs :) Here's Blueberry!",
+    title: title,
+    description: desc,
     image: "/assets/dogs/bl3.png",
     imageAlt: "Blueberry",
     handle: "@johncmanuel"
   }}
   openGraph={{
-    title: "Dogs",
-    description: "Pictures of my beautiful dogs :) Here's Buster!",
+    title: title,
+    description: desc,
     url: currUrl,
     image: "/assets/dogs/bu2.png",
     imageAlt: "Buster"
