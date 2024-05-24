@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hamburger from "./hamburger.svelte";
+  import Hamburger from "../Icons/Hamburger.svelte";
   const links = [
     { href: "/#about", text: "About" },
     { href: "/#experience", text: "Experience" },

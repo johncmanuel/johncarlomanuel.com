@@ -1,5 +1,11 @@
-<script>
-  const coursework = ["Software Engineering", "Database Systems", "Algorithms & Data Structures"];
+<script lang="ts">
+  const coursework = [
+    "Software Engineering",
+    "Database Systems",
+    "Algorithms & Data Structures",
+    "Computer Organization and Assembly Language",
+    "Intro to Game Design"
+  ];
   const colleges = [
     {
       name: "California State University, Fullerton",

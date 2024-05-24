@@ -1,5 +1,5 @@
-<script>
-  import Project from "./project.svelte";
+<script lang="ts">
+  import Project from "./Project.svelte";
 
   const projects = [
     {

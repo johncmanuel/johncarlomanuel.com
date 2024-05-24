@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
-  import Footer from "$lib/components/footer.svelte";
-  import Nav from "$lib/components/nav.svelte";
+  import Footer from "$components/Footer/Footer.svelte";
+  import Nav from "$components/Nav/Nav.svelte";
 </script>
 
 <Nav />

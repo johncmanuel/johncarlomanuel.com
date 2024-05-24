@@ -1,5 +1,5 @@
 <script>
-  import Experience from "./experience.svelte";
+  import Experience from "../Experience/Experience.svelte";
 
   // Basis of my resume in JSON format
   // TODO: Use as data when creating resume

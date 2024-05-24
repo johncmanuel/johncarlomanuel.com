@@ -4,7 +4,7 @@
   import Twitter from "virtual:icons/fa6-brands/twitter";
   import Youtube from "virtual:icons/fa6-brands/youtube";
   import Email from "virtual:icons/fa6-solid/envelope";
-  import Webring from "./webring.svelte";
+  import Webring from "../Webring/Webring.svelte";
 
   const skylineCSCWebring =
     "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";

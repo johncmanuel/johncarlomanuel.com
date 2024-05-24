@@ -1,13 +1,39 @@
-<script>
-  import Hero from "$lib/components/hero.svelte";
+<script lang="ts">
+  import Hero from "$components/Hero/Hero.svelte";
   // import Timeline from "$lib/components/timeline.svelte";
-  import Projects from "$lib/components/projects.svelte";
-  import Education from "$lib/components/education.svelte";
+  import Projects from "$components/Project/Projects.svelte";
+  import Education from "$components/Education/Education.svelte";
+  import MetaTags from "$components/SEO/MetaTags.svelte";
+  import { page } from "$app/stores";
+
+  const currUrl = new URL($page.url).href;
+
+  const name = "John Carlo Manuel";
+  const desc = "my personal website :)";
+  const avatar = "/assets/avatar.webp";
+  const avatarAlt = "picture of John Carlo Manuel";
 </script>
 
-<svelte:head>
-  <title>John Carlo Manuel</title>
-</svelte:head>
+<MetaTags
+  title={name}
+  description={desc}
+  author={name}
+  twitter={{
+    card: "summary_large_image",
+    title: name,
+    description: desc,
+    image: avatar,
+    imageAlt: avatarAlt,
+    handle: "@johncmanuel"
+  }}
+  openGraph={{
+    title: name,
+    description: desc,
+    url: currUrl,
+    image: avatar,
+    imageAlt: avatarAlt
+  }}
+/>
 
 <div id="about">
   <Hero />

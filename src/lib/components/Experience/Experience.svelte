@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CheckIcon from "./checkIcon.svelte";
+  import CheckIcon from "../Icons/CheckIcon.svelte";
 
   export let bulletPoints: string[] = [];
   export let timestamp = "timestamp";
