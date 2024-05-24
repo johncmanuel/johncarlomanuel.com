@@ -16,6 +16,7 @@
 
 <MetaTags
   title={name}
+  titleTemplate="%s | John Carlo Manuel"
   description={desc}
   author={name}
   twitter={{
