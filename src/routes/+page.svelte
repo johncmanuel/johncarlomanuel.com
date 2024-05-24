@@ -10,7 +10,7 @@
 
   const name = "John Carlo Manuel";
   const desc = "my personal website :)";
-  const avatar = "/assets/avatar.webp";
+  const avatar = "/android-chrome-512x512.png";
   const avatarAlt = "picture of John Carlo Manuel";
 </script>
 
