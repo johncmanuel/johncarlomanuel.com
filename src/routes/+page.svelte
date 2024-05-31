@@ -8,7 +8,7 @@
 
   const currUrl = new URL($page.url).href;
 
-  const name = "John Carlo Manuel";
+  const name = "Homepage";
   const desc = "my personal website :)";
   const avatar = "/android-chrome-512x512.png";
   const avatarAlt = "picture of John Carlo Manuel";
