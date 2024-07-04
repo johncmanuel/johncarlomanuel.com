@@ -5,6 +5,13 @@
   import Education from "$components/Education/Education.svelte";
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
+  import Nav from "$components/Nav/Nav.svelte";
+
+  import GitHub from "virtual:icons/fa6-brands/github";
+  import LinkedIn from "virtual:icons/fa6-brands/linkedin";
+  import Twitter from "virtual:icons/fa6-brands/twitter";
+  import Youtube from "virtual:icons/fa6-brands/youtube";
+  import Email from "virtual:icons/fa6-solid/envelope";
 
   const currUrl = new URL($page.url).href;
 
@@ -36,18 +43,86 @@
   }}
 />
 
-<div id="about">
+<div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto border-x">
+  <!-- <Nav /> -->
+  <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
+    <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
+      <img
+        src="/assets/avatar.webp"
+        class="object-contain md:object-scale-down md:max-w-sm rounded-lg shadow-2xl"
+        alt="John Carlo Manuel"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="flex flex-col gap-8 md:gap-5">
+      <h1 class="text-2xl md:text-left text-center">john carlo manuel</h1>
+      <p>
+        Software engineer and computer science student at California State University, Fullerton.
+        I'm interested in full-stack development, game development, and distributed systems. Outside
+        of engineering, I enjoy diving into creative endeavors such as writing and worldbuilding.
+        I'm also a cool gamer that mainly plays (MMO)RPGs and narrative-driven games.
+      </p>
+      <div class="flex gap-3">
+        <a href="https://github.com/johncmanuel/" target="_blank" aria-label="GitHub">
+          <GitHub />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/johncarlomanuel/"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <LinkedIn />
+        </a>
+        <a href="https://twitter.com/johncmanuel" target="_blank" aria-label="Twitter">
+          <Twitter />
+        </a>
+        <a href="https://www.youtube.com/@johncarlomanuel" target="_blank" aria-label="YouTube">
+          <Youtube />
+        </a>
+        <a href="mailto:me@johncarlomanuel.com" target="_blank" aria-label="Email">
+          <Email />
+        </a>
+      </div>
+      <div class="flex flex-col gap-6 md:gap-3">
+        <h2 class="text-2xl">Resume</h2>
+        <div class="flex gap-3 flex-row">
+          <a
+            class="hover:underline"
+            target="_blank"
+            href="https://drive.google.com/file/d/1-mMm_LY_4rdwsDWA0RjQl2ZYDdKTMq-q/view?usp=sharing"
+            >PDF</a
+          >
+          <!-- show json version of resume here -->
+          <!-- <a
+            class="hover:underline"
+            target="_blank"
+            href="https://drive.google.com/file/d/1-mMm_LY_4rdwsDWA0RjQl2ZYDdKTMq-q/view?usp=sharing"
+            >JSON</a
+          > -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-6">
+    <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
+        <h1 class="text-2xl">recent registers</h1>
+        <div class="flex items-center flex-col justify-center h-[20rem] gap-1 opacity-75">
+          full list here
+        </div>
+      </div>
+    </div>
+    <!-- something else here -->
+    <div>hi</div>
+  </div>
+</div>
+
+<!-- <div id="about">
   <Hero />
 </div>
 
 <div class="container">
-  <!-- <div class="container">
-    <div class="divider divider-primary px-4 md:px-10" />
-    <div id="experience" class="container">
-      <h1 class="text-5xl font-bold pb-16 text-center">Experience</h1>
-      <Timeline />
-    </div>
-  </div> -->
   <div class="container" id="projects">
     <div class="divider divider-primary px-4 md:px-10" />
     <h1 class="text-5xl font-bold pb-16 text-center">Featured Projects</h1>
@@ -59,4 +134,4 @@
     <Education />
   </div>
   <div class="divider divider-primary px-4 md:px-10" />
-</div>
+</div> -->

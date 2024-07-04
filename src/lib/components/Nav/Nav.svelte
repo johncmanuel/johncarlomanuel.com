@@ -10,9 +10,16 @@
   ];
 </script>
 
-<div class="navbar bg-base-100">
+<div
+  class="mx-auto flex items-center justify-center gap-2 p-2 text-[0.75rem] md:gap-3 md:text-[1rem]"
+>
+  {#each links as link}
+    <a href={link.href} class="cursor-pointer p-2">{link.text}</a>
+  {/each}
+</div>
+
+<!-- <div class="navbar bg-base-100">
   <div class="navbar-start">
-    <!-- Mobile -->
     <div class="dropdown">
       <div
         tabindex="0"
@@ -21,9 +28,9 @@
         aria-label="View navigation links"
       >
         <Hamburger />
-      </div>
-      <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-      <ul
+      </div> -->
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<!-- <ul
         tabindex="0"
         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
       >
@@ -34,7 +41,6 @@
     </div>
     <a class="btn btn-ghost text-xl" href="/" aria-label="Go to Homepage">John Carlo Manuel</a>
   </div>
-  <!-- Desktop -->
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1">
       {#each links as link}
@@ -43,4 +49,4 @@
     </ul>
   </div>
   <div class="navbar-end" />
-</div>
+</div> -->
