@@ -7,23 +7,32 @@
   import { page } from "$app/stores";
   import Nav from "$components/Nav/Nav.svelte";
 
+  import Link from "$components/Icons/Link.svelte";
+
   import GitHub from "virtual:icons/fa6-brands/github";
   import LinkedIn from "virtual:icons/fa6-brands/linkedin";
   import Twitter from "virtual:icons/fa6-brands/twitter";
   import Youtube from "virtual:icons/fa6-brands/youtube";
   import Email from "virtual:icons/fa6-solid/envelope";
 
+  import Webring from "$components/Webring/Webring.svelte";
+
   const currUrl = new URL($page.url).href;
 
-  const name = "Homepage";
+  import type { PageData } from "./$types";
+  export let data: PageData;
+  // console.log(data);
+
+  const name = "John Carlo Manuel";
   const desc = "my personal website :)";
   const avatar = "/android-chrome-512x512.png";
   const avatarAlt = "picture of John Carlo Manuel";
+  const skylineCSCWebring =
+    "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";
 </script>
 
 <MetaTags
   title={name}
-  titleTemplate="%s | John Carlo Manuel"
   description={desc}
   author={name}
   twitter={{
@@ -44,7 +53,6 @@
 />
 
 <div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto border-x">
-  <!-- <Nav /> -->
   <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
     <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
       <img
@@ -88,11 +96,13 @@
         <h2 class="text-2xl">Resume</h2>
         <div class="flex gap-3 flex-row">
           <a
-            class="hover:underline"
+            class="flex flex-row gap-1 hover:underline"
             target="_blank"
             href="https://drive.google.com/file/d/1-mMm_LY_4rdwsDWA0RjQl2ZYDdKTMq-q/view?usp=sharing"
-            >PDF</a
           >
+            <Link />
+            <span>PDF</span>
+          </a>
           <!-- show json version of resume here -->
           <!-- <a
             class="hover:underline"
@@ -113,8 +123,23 @@
         </div>
       </div>
     </div>
-    <!-- something else here -->
-    <div>hi</div>
+    <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
+        <h1 class="text-2xl">projects</h1>
+      </div>
+    </div>
+    <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
+        <Webring src={skylineCSCWebring} />
+      </div>
+    </div>
+    <div id="footer" class="flex flex-col gap-4 max-w-full px-4">
+      <aside class="mx-auto">
+        <p>
+          Copyright © {new Date().getFullYear()} John Carlo Manuel - All rights reserved.
+        </p>
+      </aside>
+    </div>
   </div>
 </div>
 
