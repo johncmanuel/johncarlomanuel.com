@@ -1,0 +1,27 @@
+{
+  "skills": [
+    "Python",
+    "C++",
+    "C#",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "SQL",
+    "x86-64 Assembly",
+    "Next.js",
+    "React",
+    "Node.js",
+    "FastAPI",
+    "SvelteKit",
+    "Git",
+    "Docker"
+  ],
+  "coursework": [
+    "Software Engineering",
+    "Database Systems",
+    "Algorithms & Data Structures",
+    "Computer Organization and Assembly Language",
+    "Intro to Game Design"
+  ]
+}

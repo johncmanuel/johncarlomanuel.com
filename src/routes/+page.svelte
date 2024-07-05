@@ -11,6 +11,7 @@
   import Youtube from "virtual:icons/fa6-brands/youtube";
   import Email from "virtual:icons/fa6-solid/envelope";
   import Webring from "$components/Webring/Webring.svelte";
+  import Self from "$lib/public/self";
   import type { PageData } from "./$types";
 
   const currUrl = new URL($page.url).href;
@@ -162,38 +163,70 @@
       </div>
     </div>
   </div>
-  <div class="flex flex-col gap-12 md:gap-6">
+  <div class="flex flex-col gap-12 md:gap-10">
     <!-- <div id="experience" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">experience</h1>
       </div>
     </div>
   -->
+    <div id="skills" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
+        <h1 class="text-2xl">skills</h1>
+        <div
+          class="flex items-start flex-col md:flex-row flex-wrap justify-start gap-3 md:gap-2 px-4 opacity-75"
+        >
+          {#each Self.skills as skill}
+            <span
+              class="flex bg-indigo-100 text-indigo-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300"
+            >
+              {skill}
+            </span>
+          {/each}
+        </div>
+      </div>
+    </div>
     <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 overflow-hidden md:px-4 flex-col">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">featured projects</h1>
-        <ul class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
+        <ul class="flex items-start flex-col justify-center gap-8 px-4 opacity-75">
           {#each projects as project}
-            <li class="flex flex-col">
+            <li class="flex flex-col gap-2 md:gap-1">
               <a
                 href={project.url}
                 target="_blank"
-                class="flex flex-col md:flex-row gap-0.5 hover:underline"
+                class="flex flex-row flex-wrap gap-0.5 hover:underline"
               >
                 <span class="text-xl md:text-base">{project.name}</span>
                 <Link />
               </a>
               <p class="text-balance">{project.desc}</p>
+              <div class="flex flex-row gap-1 flex-wrap">
+                <!-- <span class="text-base">skills:</span> -->
+                {#each project.tags as tag}
+                  <span
+                    class="flex bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
+                    >{tag}</span
+                  >
+                {/each}
+              </div>
             </li>
           {/each}
         </ul>
       </div>
     </div>
-    <!-- <div id="skills" class="flex flex-col gap-4 max-w-full px-4">
+    <div id="coursework" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">skills</h1>
+        <h1 class="text-2xl">relevant coursework</h1>
+        <ul
+          class="flex flex-wrap items-start flex-col justify-start gap-2 md:gap-3 px-4 opacity-75"
+        >
+          {#each Self.coursework as course}
+            <li class="flex flex-nowrap">• {course}</li>
+          {/each}
+        </ul>
       </div>
-    </div> -->
+    </div>
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">recent registers</h1>
@@ -203,7 +236,7 @@
               <a
                 href={post.link}
                 target="_blank"
-                class="flex flex-col md:flex-row gap-1 hover:underline"
+                class="flex flex-row flex-wrap gap-1 hover:underline"
               >
                 <span class="text-xl">{post.title}</span>
                 <Link />
