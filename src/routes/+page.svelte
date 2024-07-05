@@ -1,11 +1,6 @@
 <script lang="ts">
-  import Hero from "$components/Hero/Hero.svelte";
-  // import Timeline from "$lib/components/timeline.svelte";
-  import Projects from "$components/Project/Projects.svelte";
-  import Education from "$components/Education/Education.svelte";
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import Nav from "$components/Nav/Nav.svelte";
 
   import Link from "$components/Icons/Link.svelte";
 
@@ -53,7 +48,7 @@
   }}
 />
 
-<div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto border-x">
+<div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto">
   <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
     <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
       <img
@@ -115,14 +110,30 @@
       </div>
     </div>
   </div>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-12 md:gap-6">
+    <div id="experience" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
+        <!-- TODO: 1-2 sentence summary about each experience -->
+        <h1 class="text-2xl">experience</h1>
+      </div>
+    </div>
+    <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
+        <!-- TODO: 1-2 sentence summary + tag for each skill for each project  -->
+        <h1 class="text-2xl">featured projects</h1>
+      </div>
+    </div>
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">recent registers</h1>
         <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
           {#each recentPosts as post}
             <div class="flex flex-col gap-1">
-              <a href={post.link} target="_blank" class="flex flex-row gap-1 hover:underline">
+              <a
+                href={post.link}
+                target="_blank"
+                class="flex flex-col md:flex-row gap-1 hover:underline"
+              >
                 <span class="text-xl">{post.title}</span>
                 <Link />
               </a>
@@ -143,11 +154,6 @@
         </h2>
       </div>
     </div>
-    <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">projects</h1>
-      </div>
-    </div>
     <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
         <Webring src={skylineCSCWebring} />
@@ -162,21 +168,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div id="about">
-  <Hero />
-</div>
-
-<div class="container">
-  <div class="container" id="projects">
-    <div class="divider divider-primary px-4 md:px-10" />
-    <h1 class="text-5xl font-bold pb-16 text-center">Featured Projects</h1>
-    <Projects />
-  </div>
-  <div class="container" id="education">
-    <div class="divider divider-primary px-4 md:px-10" />
-    <h1 class="text-5xl font-bold pb-16 text-center">Education</h1>
-    <Education />
-  </div>
-  <div class="divider divider-primary px-4 md:px-10" />
-</div> -->
