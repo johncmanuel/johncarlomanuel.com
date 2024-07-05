@@ -21,7 +21,8 @@
 
   import type { PageData } from "./$types";
   export let data: PageData;
-  // console.log(data);
+  // @ts-ignore: TODO - create type in future
+  const recentPosts = data.recentPosts;
 
   const name = "John Carlo Manuel";
   const desc = "my personal website :)";
@@ -116,15 +117,34 @@
   </div>
   <div class="flex flex-col gap-6">
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">recent registers</h1>
-        <div class="flex items-center flex-col justify-center h-[20rem] gap-1 opacity-75">
-          full list here
+        <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
+          {#each recentPosts as post}
+            <div class="flex flex-col gap-1">
+              <a href={post.link} target="_blank" class="flex flex-row gap-1 hover:underline">
+                <span class="text-xl">{post.title}</span>
+                <Link />
+              </a>
+              <p>{post.description}</p>
+              <p class="text-sm">{post.pubDate}</p>
+            </div>
+          {/each}
         </div>
+        <h2>
+          <a
+            href="https://registers.johncarlomanuel.com"
+            target="_blank"
+            class="flex gap-0.5 hover:underline"
+          >
+            <span>view more</span>
+            <Link />
+          </a>
+        </h2>
       </div>
     </div>
     <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">projects</h1>
       </div>
     </div>
@@ -135,7 +155,7 @@
     </div>
     <div id="footer" class="flex flex-col gap-4 max-w-full px-4">
       <aside class="mx-auto">
-        <p>
+        <p class="text-center">
           Copyright © {new Date().getFullYear()} John Carlo Manuel - All rights reserved.
         </p>
       </aside>
