@@ -1,9 +1,22 @@
 import type { PageLoad } from "./$types";
 import { XMLParser } from "fast-xml-parser";
 import type { Post } from "$lib/types/post";
+import Links from "$lib/public/links";
 
 export const load: PageLoad = async ({ fetch }) => {
-  const res = await fetch("https://registers.johncarlomanuel.com/rss.xml");
+  const blogUrl = `${Links["blog"]}rss.xml`;
+
+  // Check if URL is valid
+  try {
+    new URL(blogUrl);
+  } catch (err) {
+    return {};
+  }
+
+  const res = await fetch(blogUrl);
+  if (!res.ok) {
+    return {};
+  }
   const data = await res.text();
 
   const parser = new XMLParser();

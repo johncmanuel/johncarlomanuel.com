@@ -1,7 +1,6 @@
-<!-- TODO: 1-2 sentence summary about each experience from resume repo -->
-<!-- TODO: 1-2 sentence summary + tag for each skill for each project from resume repo -->
-
 <script lang="ts">
+  // TODO: 1-2 sentence summary about each experience from resume repo
+  // TODO: 1-2 sentence summary + tag for each skill for each project from resume repo
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
   import Link from "$components/Icons/Link.svelte";
@@ -12,14 +11,13 @@
   import Email from "virtual:icons/fa6-solid/envelope";
   import Webring from "$components/Webring/Webring.svelte";
   import Self from "$lib/public/self";
+  import Links from "$lib/public/links";
   import type { PageData } from "./$types";
 
   const currUrl = new URL($page.url).href;
 
   export let data: PageData;
-  // @ts-ignore: TODO - create type in future
-  // TODO: handle cases where data is loading or not loaded at all
-  const recentPosts = data.recentPosts;
+  const recentPosts = data.recentPosts ?? [];
 
   const name = "John Carlo Manuel";
   const desc = "my personal website :)";
@@ -230,32 +228,38 @@
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">recent registers</h1>
-        <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
-          {#each recentPosts as post}
-            <article class="flex flex-col gap-1">
-              <a
-                href={post.link}
-                target="_blank"
-                class="flex flex-row flex-wrap gap-1 hover:underline"
-              >
-                <span class="text-xl">{post.title}</span>
-                <Link />
-              </a>
-              <p>{post.description}</p>
-              <p class="text-sm">{post.pubDate}</p>
-            </article>
-          {/each}
-        </div>
-        <h2>
-          <a
-            href="https://registers.johncarlomanuel.com"
-            target="_blank"
-            class="flex gap-0.5 hover:underline"
-          >
-            <span>view more</span>
-            <Link />
-          </a>
-        </h2>
+        {#if recentPosts.length !== 0}
+          <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
+            {#each recentPosts as post}
+              <article class="flex flex-col gap-1">
+                <a
+                  href={post.link}
+                  target="_blank"
+                  class="flex flex-row flex-wrap gap-1 hover:underline"
+                >
+                  <span class="text-xl">{post.title}</span>
+                  <Link />
+                </a>
+                <p>{post.description}</p>
+                <p class="text-sm">{post.pubDate}</p>
+              </article>
+            {/each}
+          </div>
+          <h2>
+            <a
+              href="https://registers.johncarlomanuel.com"
+              target="_blank"
+              class="flex gap-0.5 hover:underline"
+            >
+              <span>view more</span>
+              <Link />
+            </a>
+          </h2>
+        {:else}
+          <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
+            <span class="text-lg">unable to fetch the latest registers... :(</span>
+          </div>
+        {/if}
       </div>
     </div>
     <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
