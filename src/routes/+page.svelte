@@ -3,7 +3,7 @@
   // TODO: 1-2 sentence summary + tag for each skill for each project from resume repo
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import Link from "$components/Icons/Link.svelte";
+  import NewWindow from "$components/Icons/NewWindow.svelte";
   import GitHub from "virtual:icons/fa6-brands/github";
   import LinkedIn from "virtual:icons/fa6-brands/linkedin";
   import Twitter from "virtual:icons/fa6-brands/twitter";
@@ -11,6 +11,7 @@
   import Email from "virtual:icons/fa6-solid/envelope";
   import Webring from "$components/Webring/Webring.svelte";
   import Self from "$lib/public/self";
+  import Link from "$components/Link/Link.svelte";
   import Links from "$lib/public/links";
   import type { PageData } from "./$types";
 
@@ -26,56 +27,13 @@
   const skylineCSCWebring =
     "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";
 
-  // TODO: add this stuff to the resume repo and import it from there
-  const projects = [
-    {
-      name: "bettercs",
-      url: "https://github.com/johncmanuel/bettercs",
-      desc: "A gamified web application designed to help CS students learn concepts through highly interactive activities for typical weed-out classes such as Data Structures and Computer Organization. FullyHacks 2024.",
-      tags: ["nextjs", "typescript", "react", "educational"]
-    },
-    {
-      name: "isabot",
-      url: "https://github.com/johncmanuel/isabot",
-      desc: "A Discord interactions and webhook bot for AR Club, a World of Warcraft guild in US-Shandris/Bronzebeard.",
-      tags: ["python", "fastapi", "GCP"]
-    },
-    {
-      name: "RateMyLoo",
-      url: "https://github.com/johncmanuel/RateMyLoo",
-      desc: "A web application for users who want to share pictures of their bathrooms and rate others.",
-      img_url: "/assets/projects/ratemyloo.webp",
-      tags: ["react", "firebase", "typescript", "nextjs", "tailwindcss", "playwright"]
-    },
-    {
-      name: "discordbot",
-      url: "https://github.com/johncmanuel/discordbot",
-      desc: "A customizable, dynamic Discord bot in Python that supports multple features.",
-      img_url: "/assets/projects/discordbot.webp",
-      tags: ["python", "firebase", "discord.py"]
-    },
-    {
-      name: "UniPals",
-      url: "https://github.com/johncmanuel/UniPals",
-      desc: "A website that allows users, specifically university students, to connect with others and socialize. LA Hacks 2021.",
-      img_url: "/assets/projects/unipals.webp",
-      tags: ["react", "django", "semantic-ui"]
-    },
-    {
-      name: "Xplora",
-      url: "https://github.com/johncmanuel/Xplora",
-      desc: "A remote-controlled and autonomous car designed for exploring unknown and risky environments. Part of the 2022 Winter Scholars Program at Skyline College.",
-      img_url: "/assets/projects/xplora.webp",
-      tags: ["arduino", "c++", "robotics"]
-    },
-    {
-      name: "20 Years",
-      url: "https://www.amazon.com/dp/B08JRJ1YV6",
-      desc: "A fantasy, adventure novel written and published in 2020.",
-      img_url: "/assets/projects/20yrs.webp",
-      tags: ["writing"]
-    }
-  ];
+  const resumeUrl = Links["resume"];
+  const githubUrl = Links["github"];
+  const twitterUrl = Links["twitter"];
+  const linkedInUrl = Links["linkedin"];
+  const youtubeUrl = Links["youtube"];
+  const emailUrl = Links["email"];
+  const blogUrl = Links["blog"];
 </script>
 
 <MetaTags
@@ -113,43 +71,40 @@
     <div class="flex flex-col gap-8 md:gap-5">
       <h1 class="text-2xl md:text-left text-center">john carlo manuel</h1>
       <p>
-        Software engineer and computer science student at California State University, Fullerton.
-        I'm interested in full-stack development, game development, and distributed systems. Outside
-        of engineering, I enjoy diving into creative endeavors such as writing and worldbuilding.
-        I'm also a cool gamer that mainly plays (MMO)RPGs and narrative-driven games.
+        Software engineer and computer science student at <b
+          >California State University, Fullerton</b
+        >. I'm interested in <b>full-stack development</b>, <b>game development</b>, and
+        <b>distributed systems</b> Outside of engineering, I enjoy diving into creative endeavors such
+        as writing and worldbuilding. I'm also a cool gamer that mainly plays (MMO)RPGs and narrative-driven
+        games.
       </p>
       <div class="flex gap-3">
-        <a href="https://github.com/johncmanuel/" target="_blank" aria-label="GitHub">
+        <a href={githubUrl} target="_blank" aria-label="GitHub">
           <GitHub />
         </a>
-        <a
-          href="https://www.linkedin.com/in/johncarlomanuel/"
-          target="_blank"
-          aria-label="LinkedIn"
-        >
+        <a href={linkedInUrl} target="_blank" aria-label="LinkedIn">
           <LinkedIn />
         </a>
-        <a href="https://twitter.com/johncmanuel" target="_blank" aria-label="Twitter">
+        <a href={twitterUrl} target="_blank" aria-label="Twitter">
           <Twitter />
         </a>
-        <a href="https://www.youtube.com/@johncarlomanuel" target="_blank" aria-label="YouTube">
+        <a href={youtubeUrl} target="_blank" aria-label="YouTube">
           <Youtube />
         </a>
-        <a href="mailto:me@johncarlomanuel.com" target="_blank" aria-label="Email">
+        <a href={emailUrl} target="_blank" aria-label="Email">
           <Email />
         </a>
       </div>
       <div class="flex flex-col gap-6 md:gap-3">
         <h2 class="text-2xl">Resume</h2>
         <div class="flex gap-3 flex-row">
-          <a
-            class="flex flex-row gap-1 hover:underline"
-            target="_blank"
-            href="https://drive.google.com/file/d/1-mMm_LY_4rdwsDWA0RjQl2ZYDdKTMq-q/view?usp=sharing"
-          >
-            <Link />
-            <span>PDF</span>
-          </a>
+          <Link
+            href={resumeUrl}
+            aClass={"flex flex-row gap-1"}
+            additionalText={"PDF"}
+            additionalTextClass={"self-center"}
+          />
+
           <!-- show json version of resume here -->
           <!-- <a
             class="hover:underline"
@@ -188,7 +143,7 @@
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">featured projects</h1>
         <ul class="flex items-start flex-col justify-center gap-8 px-4 opacity-75">
-          {#each projects as project}
+          {#each Self.projects as project}
             <li class="flex flex-col gap-2 md:gap-1">
               <a
                 href={project.url}
@@ -196,7 +151,7 @@
                 class="flex flex-row flex-wrap gap-0.5 hover:underline"
               >
                 <span class="text-xl md:text-base">{project.name}</span>
-                <Link />
+                <NewWindow />
               </a>
               <p class="text-balance">{project.desc}</p>
               <div class="flex flex-row gap-1 flex-wrap">
@@ -238,7 +193,7 @@
                   class="flex flex-row flex-wrap gap-1 hover:underline"
                 >
                   <span class="text-xl">{post.title}</span>
-                  <Link />
+                  <NewWindow />
                 </a>
                 <p>{post.description}</p>
                 <p class="text-sm">{post.pubDate}</p>
@@ -246,13 +201,9 @@
             {/each}
           </div>
           <h2>
-            <a
-              href="https://registers.johncarlomanuel.com"
-              target="_blank"
-              class="flex gap-0.5 hover:underline"
-            >
+            <a href={blogUrl} target="_blank" class="flex gap-0.5 hover:underline">
               <span>view more</span>
-              <Link />
+              <NewWindow />
             </a>
           </h2>
         {:else}
