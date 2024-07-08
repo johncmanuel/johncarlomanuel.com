@@ -103,6 +103,7 @@
             aClass={"flex flex-row gap-1"}
             additionalText={"PDF"}
             additionalTextClass={"self-center"}
+            allowSubdomain={true}
           />
 
           <!-- show json version of resume here -->
@@ -145,14 +146,12 @@
         <ul class="flex items-start flex-col justify-center gap-8 px-4 opacity-75">
           {#each Self.projects as project}
             <li class="flex flex-col gap-2 md:gap-1">
-              <a
+              <Link
                 href={project.url}
-                target="_blank"
-                class="flex flex-row flex-wrap gap-0.5 hover:underline"
-              >
-                <span class="text-xl md:text-base">{project.name}</span>
-                <NewWindow />
-              </a>
+                additionalText={project.name}
+                aClass={"flex flex-row flex-wrap gap-1"}
+                additionalTextClass={"text-lg md:text-base font-bold"}
+              />
               <p class="text-balance">{project.desc}</p>
               <div class="flex flex-row gap-1 flex-wrap">
                 <!-- <span class="text-base">skills:</span> -->
@@ -182,29 +181,30 @@
     </div>
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">recent registers</h1>
+        <h1 class="text-xl">recent registers</h1>
         {#if recentPosts.length !== 0}
           <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
             {#each recentPosts as post}
               <article class="flex flex-col gap-1">
-                <a
+                <Link
                   href={post.link}
-                  target="_blank"
-                  class="flex flex-row flex-wrap gap-1 hover:underline"
-                >
-                  <span class="text-xl">{post.title}</span>
-                  <NewWindow />
-                </a>
+                  aClass={"flex flex-row flex-wrap gap-1"}
+                  additionalText={post.title}
+                  additionalTextClass={"text-lg"}
+                  omitHref={true}
+                />
                 <p>{post.description}</p>
                 <p class="text-sm">{post.pubDate}</p>
               </article>
             {/each}
           </div>
           <h2>
-            <a href={blogUrl} target="_blank" class="flex gap-0.5 hover:underline">
-              <span>view more</span>
-              <NewWindow />
-            </a>
+            <Link
+              href={blogUrl}
+              aClass={"flex gap-1 py-4 md:py-0"}
+              additionalText={"view more"}
+              allowSubdomain={true}
+            />
           </h2>
         {:else}
           <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
