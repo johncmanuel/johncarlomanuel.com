@@ -11,8 +11,6 @@
   export let src: string | null = null;
 
   $: _src = src ?? undefined;
-
-  $: console.log(_src);
 </script>
 
 {#if _src}
