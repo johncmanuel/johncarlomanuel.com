@@ -74,9 +74,9 @@
         Software engineer and computer science student at <b
           >California State University, Fullerton</b
         >. I'm interested in <b>full-stack development</b>, <b>game development</b>, and
-        <b>distributed systems</b> Outside of engineering, I enjoy diving into creative endeavors such
-        as writing and worldbuilding. I'm also a cool gamer that mainly plays (MMO)RPGs and narrative-driven
-        games.
+        <b>distributed systems</b>. Outside of engineering, I enjoy diving into creative endeavors
+        such as writing and worldbuilding. I'm also a cool gamer that mainly plays (MMO)RPGs and
+        narrative-driven games.
       </p>
       <div class="flex gap-3">
         <a href={githubUrl} target="_blank" aria-label="GitHub">
