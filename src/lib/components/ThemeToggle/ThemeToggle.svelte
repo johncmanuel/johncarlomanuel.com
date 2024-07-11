@@ -42,7 +42,7 @@
   </script>
 </svelte:head>
 
-<div class="flex">
+<div class="flex self-center">
   <input checked={darkMode} on:click={handleSwitchDarkMode} type="checkbox" id="theme-toggle" />
   <label for="theme-toggle" />
 </div>
@@ -53,7 +53,7 @@
   }
 
   #theme-toggle + label {
-    @apply cursor-pointer h-12 w-12 rounded-full duration-300 content-[''];
+    @apply cursor-pointer h-9 w-9 rounded-full duration-300 content-[''];
   }
 
   #theme-toggle:not(:checked) + label {
@@ -62,6 +62,6 @@
 
   #theme-toggle:checked + label {
     @apply bg-transparent;
-    box-shadow: inset -18px -16px 1px 1px #d6ff7d;
+    box-shadow: inset -13px -10px 1px 1px #d6ff7d;
   }
 </style>

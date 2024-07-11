@@ -69,7 +69,7 @@
       />
     </div>
     <div class="flex flex-col gap-8 md:gap-5">
-      <h1 class="flex gap-5 md:gap-3 text-2xl text-left">
+      <h1 class="flex flex-row gap-5 md:gap-3 text-2xl text-left">
         john carlo manuel <ThemeToggle />
       </h1>
       <p>
@@ -134,7 +134,7 @@
         >
           {#each Self.skills as skill}
             <span
-              class="flex bg-blue-4 text-blue-1 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-grey-1 dark:text-blue-1"
+              class="flex bg-blue-4 text-blue-3 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-grey-1 dark:text-blue-1"
             >
               {skill}
             </span>
