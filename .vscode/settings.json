@@ -8,5 +8,9 @@
   },
   "[svelte]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  // Removes warning messages when importing tailwind in
+  // app.css
+  // Source: https://github.com/tailwindlabs/tailwindcss/discussions/5258#discussioncomment-1979394
+  "css.customData": [".vscode/tailwind.json"]
 }
