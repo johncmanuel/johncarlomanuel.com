@@ -3,7 +3,6 @@
   // TODO: 1-2 sentence summary + tag for each skill for each project from resume repo
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import NewWindow from "$components/Icons/NewWindow.svelte";
   import GitHub from "virtual:icons/fa6-brands/github";
   import LinkedIn from "virtual:icons/fa6-brands/linkedin";
   import Twitter from "virtual:icons/fa6-brands/twitter";
@@ -13,6 +12,7 @@
   import Self from "$lib/public/self";
   import Link from "$components/Link/Link.svelte";
   import Links from "$lib/public/links";
+  import ThemeToggle from "$components/ThemeToggle/ThemeToggle.svelte";
   import type { PageData } from "./$types";
 
   const currUrl = new URL($page.url).href;
@@ -62,14 +62,16 @@
     <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
       <img
         src="/assets/avatar.webp"
-        class="object-contain md:object-scale-down md:max-w-sm rounded-lg shadow-2xl"
+        class="object-contain md:object-scale-down md:max-w-sm rounded-lg shadow-xl"
         alt="John Carlo Manuel"
         loading="eager"
         fetchpriority="high"
       />
     </div>
     <div class="flex flex-col gap-8 md:gap-5">
-      <h1 class="text-2xl md:text-left text-center">john carlo manuel</h1>
+      <h1 class="flex gap-5 md:gap-3 text-2xl text-left">
+        john carlo manuel <ThemeToggle />
+      </h1>
       <p>
         Software engineer and computer science student at <b
           >California State University, Fullerton</b
@@ -128,11 +130,11 @@
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">skills</h1>
         <div
-          class="flex items-start flex-col md:flex-row flex-wrap justify-start gap-3 md:gap-2 px-4 opacity-75"
+          class="flex items-start flex-col md:flex-row flex-wrap justify-start gap-3 md:gap-2 px-4"
         >
           {#each Self.skills as skill}
             <span
-              class="flex bg-indigo-100 text-indigo-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300"
+              class="flex bg-blue-4 text-blue-1 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-grey-1 dark:text-blue-1"
             >
               {skill}
             </span>
@@ -143,7 +145,7 @@
     <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">featured projects</h1>
-        <ul class="flex items-start flex-col justify-center gap-8 px-4 opacity-75">
+        <ul class="flex items-start flex-col justify-center gap-8 px-4">
           {#each Self.projects as project}
             <li class="flex flex-col gap-2 md:gap-1">
               <Link
@@ -152,12 +154,12 @@
                 aClass={"flex flex-row flex-wrap gap-1"}
                 additionalTextClass={"text-lg md:text-base font-bold"}
               />
-              <p class="text-balance">{project.desc}</p>
+              <p class="text-balance dark:opacity-75">{project.desc}</p>
               <div class="flex flex-row gap-1 flex-wrap">
                 <!-- <span class="text-base">skills:</span> -->
                 {#each project.tags as tag}
                   <span
-                    class="flex bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300"
+                    class="flex bg-blue-4 text-blue-3 dark:bg-grey-1 dark:text-blue-3 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
                     >{tag}</span
                   >
                 {/each}
@@ -171,7 +173,7 @@
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">relevant coursework</h1>
         <ul
-          class="flex flex-wrap items-start flex-col justify-start gap-2 md:gap-3 px-4 opacity-75"
+          class="flex flex-wrap items-start flex-col justify-start gap-2 md:gap-3 px-4 dark:opacity-75"
         >
           {#each Self.coursework as course}
             <li class="flex flex-nowrap">• {course}</li>
@@ -183,14 +185,14 @@
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-xl">recent registers</h1>
         {#if recentPosts.length !== 0}
-          <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
+          <div class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75">
             {#each recentPosts as post}
               <article class="flex flex-col gap-1">
                 <Link
                   href={post.link}
                   aClass={"flex flex-row flex-wrap gap-1"}
                   additionalText={post.title}
-                  additionalTextClass={"text-lg"}
+                  additionalTextClass={"text-lg font-bold"}
                   omitHref={true}
                 />
                 <p>{post.description}</p>
