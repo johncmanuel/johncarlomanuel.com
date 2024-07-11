@@ -43,7 +43,7 @@
  side, use justify-content: flex-end or justify-end for tailwind
  https://stackoverflow.com/a/54462796
  -->
-<a href={href.toString()} target="_blank" class={_aClass}>
+<a href={href.toString()} target="_blank" class={_aClass} aria-label={hostname}>
   {#if _additionalText}
     <span class={_additionalTextClass}>
       {_additionalText}
