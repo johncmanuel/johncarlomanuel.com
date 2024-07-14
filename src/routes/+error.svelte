@@ -7,8 +7,8 @@
 </svelte:head>
 
 <section title={$page.error?.message}>
-  <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content text-center">
+  <div class="flex flex-col mx-auto w-full min-h-screen bg-base-200">
+    <div class="flex hero-content text-center">
       <div class="max-w-md">
         <h1 class="text-5xl font-bold pb-10 text-center lg:pb-20">
           {$page.status} - {$page.error?.message}
