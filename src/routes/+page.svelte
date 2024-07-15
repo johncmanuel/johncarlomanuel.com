@@ -62,13 +62,13 @@
     <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
       <img
         src="/assets/avatar.webp"
-        class="object-contain md:object-scale-down md:max-w-sm rounded-lg shadow-xl"
+        class="object-contain max-h-full md:max-h-none max-w-full mx-auto md:mx-0 md:max-w-xs rounded-lg shadow-xl"
         alt="John Carlo Manuel"
         loading="eager"
         fetchpriority="high"
       />
     </div>
-    <div class="flex flex-col gap-8 md:gap-5">
+    <div class="flex flex-col gap-8 md:gap-5 pt-3 md:pt-0">
       <h1 class="flex flex-row gap-5 md:gap-3 text-2xl text-left">
         john carlo manuel <ThemeToggle />
       </h1>
