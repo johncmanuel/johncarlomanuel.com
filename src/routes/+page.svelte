@@ -156,7 +156,6 @@
               />
               <p class="text-balance dark:opacity-75">{project.desc}</p>
               <div class="flex flex-row gap-1 flex-wrap">
-                <!-- <span class="text-base">skills:</span> -->
                 {#each project.tags as tag}
                   <span
                     class="flex bg-blue-4 text-blue-3 dark:bg-grey-1 dark:text-blue-3 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
