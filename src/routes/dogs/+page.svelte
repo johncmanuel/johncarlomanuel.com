@@ -14,7 +14,7 @@
   }
 
   const DOGS_FOLDER = "/assets/dogs";
-  const DOGS_IMGS_EXT = "png";
+  const DOGS_IMGS_EXT = "jpg";
 
   const DOGS: Dog[] = [
     {
@@ -68,7 +68,7 @@
     card: "summary_large_image",
     title: title,
     description: desc,
-    image: "/assets/dogs/bl3.png",
+    image: "/assets/dogs/bl3.jpg",
     imageAlt: "Blueberry",
     handle: "@johncmanuel"
   }}
@@ -76,7 +76,7 @@
     title: title,
     description: desc,
     url: currUrl,
-    image: "/assets/dogs/bu2.png",
+    image: "/assets/dogs/bu2.jpg",
     imageAlt: "Buster"
   }}
 />
