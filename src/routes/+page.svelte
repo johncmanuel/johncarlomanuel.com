@@ -27,6 +27,8 @@
   const skylineCSCWebring =
     "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";
 
+  const heroImgPath = "/assets/avatar.jpg";
+
   const resumeUrl = Links["resume"];
   const githubUrl = Links["github"];
   const twitterUrl = Links["twitter"];
@@ -60,8 +62,10 @@
 <div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto">
   <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
     <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
+      <!-- The hero img doesn't show entirely, where the bottom doesn't completely show 
+        if on a Chromium-built browser. But on Firefox, it seems to show perfectly fine.  -->
       <img
-        src="/assets/avatar.webp"
+        src={heroImgPath}
         class="object-contain max-h-full md:max-h-none max-w-full mx-auto md:mx-0 md:max-w-xs rounded-lg shadow-xl"
         alt="John Carlo Manuel"
         loading="eager"
@@ -166,6 +170,12 @@
             </li>
           {/each}
         </ul>
+        <Link
+          href={githubUrl}
+          aClass={"flex gap-1 py-4 md:py-0"}
+          additionalText={"view more of my projects"}
+          allowSubdomain={true}
+        />
       </div>
     </div>
     <div id="coursework" class="flex flex-col gap-4 max-w-full px-4">
