@@ -3,12 +3,11 @@
 // https://stackoverflow.com/questions/11759992/calculating-jdayjulian-day-in-javascript
 // The 2nd link explains one of the constants, 2440587.5, pretty well
 
+export const HIGHER_THRESHOLD_DAYS = 16.61095558449;
+export const LOWER_THRESHOLD_DAYS = 12.91963212127;
+
 export const isFullMoon = (date: Date = new Date()): boolean => {
   const age = getLunarAge(date);
-  // const LOWER_THRESHOLD_DAYS = 16.61096;
-  // const HIGHER_THRESHOLD_DAYS = 20.30228;
-  const HIGHER_THRESHOLD_DAYS = 16.61095558449;
-  const LOWER_THRESHOLD_DAYS = 12.91963212127;
   return age >= LOWER_THRESHOLD_DAYS && age < HIGHER_THRESHOLD_DAYS;
 };
 

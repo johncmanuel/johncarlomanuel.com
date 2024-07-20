@@ -1,5 +1,12 @@
 <script lang="ts">
-  import { isFullMoon, FULL_MOON_EMOJI, getLunarAge, getLunarAgePercent } from "./lunar";
+  import {
+    isFullMoon,
+    HIGHER_THRESHOLD_DAYS,
+    LOWER_THRESHOLD_DAYS,
+    FULL_MOON_EMOJI,
+    getLunarAge,
+    getLunarAgePercent
+  } from "./lunar";
   import { onMount } from "svelte";
 
   let date = new Date();
@@ -18,7 +25,7 @@
   // https://stackoverflow.com/a/7648619
   const TIMEOUT_MS = 10;
 
-  let interval;
+  let interval: number | undefined;
   onMount(() => {
     interval = setInterval(updateDate, TIMEOUT_MS);
     return () => clearInterval(interval);
@@ -29,7 +36,7 @@
   {#if _isFullMoon}
     <p>{FULL_MOON_EMOJI} it's full moon again, crazy how time flies.</p>
   {:else}
-    <p>soon enough.</p>
+    <p>it's not a full moon, yet.</p>
   {/if}
   <h2 class="text-xl">stats</h2>
   <ul class="px-4">
@@ -38,5 +45,7 @@
       lunarAge: {lunarAge}
     </li>
     <li>lunarAgePercent: {lunarAgePercent}</li>
+    <li>isFullMoon: {_isFullMoon}</li>
+    <li>fullmoon range: between {LOWER_THRESHOLD_DAYS} and {HIGHER_THRESHOLD_DAYS}</li>
   </ul>
 </div>

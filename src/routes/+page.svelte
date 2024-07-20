@@ -134,7 +134,7 @@
 
     <div id="fullmoontracker" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">is it a full moon today?</h1>
+        <h1 class="text-2xl">full moon tracker</h1>
         <FullMoonTracker />
       </div>
     </div>
