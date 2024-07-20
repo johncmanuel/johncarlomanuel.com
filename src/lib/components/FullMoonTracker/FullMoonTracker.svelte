@@ -9,7 +9,7 @@
   } from "./lunar";
   import { onMount } from "svelte";
 
-  let date = new Date();
+  export let date: Date = new Date();
   let _isFullMoon = isFullMoon(date);
   let lunarAge = getLunarAge(date);
   let lunarAgePercent = getLunarAgePercent(date);

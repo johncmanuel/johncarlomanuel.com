@@ -17,6 +17,7 @@
   import FullMoonTracker from "$components/FullMoonTracker/FullMoonTracker.svelte";
 
   const currUrl = new URL($page.url).href;
+  const date = new Date();
 
   export let data: PageData;
   const recentPosts = data.recentPosts ?? [];
@@ -131,11 +132,10 @@
       </div>
     </div>
   -->
-
     <div id="fullmoontracker" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">full moon tracker</h1>
-        <FullMoonTracker />
+        <FullMoonTracker {date} />
       </div>
     </div>
     <div id="skills" class="flex flex-col gap-4 max-w-full px-4">
