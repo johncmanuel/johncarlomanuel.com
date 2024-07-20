@@ -9,6 +9,8 @@
   } from "./lunar";
   import { onMount } from "svelte";
 
+  const NOT_FULL_MOON_EMOJI = "❌";
+
   export let date: Date = new Date();
   let _isFullMoon = isFullMoon(date);
   let lunarAge = getLunarAge(date);
@@ -36,7 +38,7 @@
   {#if _isFullMoon}
     <p>{FULL_MOON_EMOJI} it's full moon again, crazy how time flies.</p>
   {:else}
-    <p>it's not a full moon, yet.</p>
+    <p>{NOT_FULL_MOON_EMOJI} it's not a full moon, yet.</p>
   {/if}
   <h2 class="text-xl">stats</h2>
   <ul class="px-4">
