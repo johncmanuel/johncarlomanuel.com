@@ -3,7 +3,7 @@
 // https://stackoverflow.com/questions/11759992/calculating-jdayjulian-day-in-javascript
 // The 2nd link explains one of the constants, 2440587.5, pretty well
 
-export const isFullMoon = (date: Date = new Date()) => {
+export const isFullMoon = (date: Date = new Date()): boolean => {
   const age = getLunarAge(date);
   // const LOWER_THRESHOLD_DAYS = 16.61096;
   // const HIGHER_THRESHOLD_DAYS = 20.30228;
@@ -12,27 +12,23 @@ export const isFullMoon = (date: Date = new Date()) => {
   return age >= LOWER_THRESHOLD_DAYS && age < HIGHER_THRESHOLD_DAYS;
 };
 
-export enum MOON_STATE {
-  FULL_MOON,
-  NOT_FULL_MOON
-}
-
 const LUNAR_MONTH_EARTH_DAYS = 29.53059;
+const MS_IN_DAY = 86400000;
+const MINS_IN_DAY = 1440;
+const FIRST_JULIAN_DATE = 2440587.5;
+export const FULL_MOON_EMOJI = "🌕";
+const NEW_MOON_JAN_6_2000_JULIAN_DATE = 2451550.1;
 
 const getJulianDate = (date: Date = new Date()): number => {
-  const MS_IN_DAY = 86400000;
-  const MINS_IN_DAY = 1440;
-  const FIRST_JULIAN_DATE = 2440587.5;
   return date.getTime() / MS_IN_DAY - date.getTimezoneOffset() / MINS_IN_DAY + FIRST_JULIAN_DATE;
 };
 
-const getLunarAge = (date: Date = new Date()): number => {
+export const getLunarAge = (date: Date = new Date()): number => {
   return getLunarAgePercent(date) * LUNAR_MONTH_EARTH_DAYS;
 };
 
-const getLunarAgePercent = (date: Date = new Date()): number => {
+export const getLunarAgePercent = (date: Date = new Date()): number => {
   // Source for info on the below constant: https://programmingpraxis.com/2010/01/22/phases-of-the-moon/
-  const NEW_MOON_JAN_6_2000_JULIAN_DATE = 2451550.1;
   return normalize(
     (getJulianDate(date) - NEW_MOON_JAN_6_2000_JULIAN_DATE) / LUNAR_MONTH_EARTH_DAYS
   );
