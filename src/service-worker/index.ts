@@ -1,5 +1,5 @@
 // Implement service worker
-// Guides used: 
+// Guides used:
 // https://kit.svelte.dev/docs/service-workers
 // https://www.youtube.com/watch?v=kVBJKSU7sw8
 
@@ -17,6 +17,6 @@ import { handleActivate } from "./listeners/activate";
 
 var sw = self as unknown as ServiceWorkerGlobalScope;
 
-sw.addEventListener('install', handleInstall);
-sw.addEventListener('fetch', handleFetch);
-sw.addEventListener('activate', handleActivate);
+sw.addEventListener("install", handleInstall);
+sw.addEventListener("fetch", handleFetch);
+sw.addEventListener("activate", handleActivate);

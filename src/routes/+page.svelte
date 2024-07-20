@@ -14,6 +14,7 @@
   import Links from "$lib/public/links";
   import ThemeToggle from "$components/ThemeToggle/ThemeToggle.svelte";
   import type { PageData } from "./$types";
+  import FullMoonTracker from "$components/FullMoonTracker/FullMoonTracker.svelte";
 
   const currUrl = new URL($page.url).href;
 
@@ -130,6 +131,13 @@
       </div>
     </div>
   -->
+
+    <div id="fullmoontracker" class="flex flex-col gap-4 max-w-full px-4">
+      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
+        <h1 class="text-2xl">full moon tracker</h1>
+        <FullMoonTracker />
+      </div>
+    </div>
     <div id="skills" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">skills</h1>
@@ -221,6 +229,14 @@
           <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
             <span class="text-lg">unable to fetch the latest registers... :(</span>
           </div>
+          <h2>
+            <Link
+              href={blogUrl}
+              aClass={"flex gap-1 py-4 md:py-0"}
+              additionalText={"view my blog to view them!"}
+              allowSubdomain={true}
+            />
+          </h2>
         {/if}
       </div>
     </div>
