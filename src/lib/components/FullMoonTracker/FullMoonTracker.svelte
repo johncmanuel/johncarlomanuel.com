@@ -42,7 +42,7 @@
   {/if}
   <h2 class="text-xl">stats</h2>
   <ul class="px-4">
-    <li>date: {date.toISOString()}</li>
+    <li>date: {date.toISOString()} (UTC)</li>
     <li>
       lunarAge: {lunarAge}
     </li>
