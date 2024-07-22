@@ -47,6 +47,7 @@
   });
 </script>
 
-<div>
-  {dateWithTZ}, {timezoneIANA}, {isDarkHour}, {dateOptions.timeZone}
-</div>
+<!-- TODO: add dark hour effects to background -->
+<main class="bg-blue-1 text-blue-4 dark:bg-blue-4 dark:text-blue-3">
+  <slot />
+</main>
