@@ -3,4 +3,6 @@
   import DarkHour from "$components/DarkHour/DarkHour.svelte";
 </script>
 
-<DarkHour />
+<DarkHour>
+  <slot />
+</DarkHour>

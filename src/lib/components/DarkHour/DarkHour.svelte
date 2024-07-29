@@ -1,4 +1,7 @@
 <script lang="ts">
+  // NOTE: Requires the user to be in dark mode for them to see the
+  // effect in action
+
   // https://stackoverflow.com/a/69961228
   import { onMount } from "svelte";
 
@@ -15,16 +18,19 @@
 
   const parseTimeStr = (timeStr: string): number | null => {
     const hours = parseInt(timeStr);
-    if (hours < 0 || hours > 23) {
+    if (isNaN(hours) || hours < 0 || hours > 23) {
       return null;
     }
-
     return hours;
   };
 
   let currHours = parseTimeStr(dateWithTZ);
   let isDarkHour = currHours != null ? currHours >= 0 && currHours < 1 : false;
-
+  // dark hour colors
+  // bright green: #48ff03
+  // dark green: #275721
+  // black with green hue: #070803
+  // finish gradient: dark -> bright
   const checkIfDarkHour = () => {
     date = new Date();
     dateWithTZ = date.toLocaleTimeString(defaultLocale, dateOptions);
