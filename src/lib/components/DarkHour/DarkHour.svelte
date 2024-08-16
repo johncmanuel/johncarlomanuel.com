@@ -1,8 +1,8 @@
 <script lang="ts">
+  // Trigger new background and text colors from 12 AM to 1 AM in the user's timezone.
   // NOTE: Requires the user to be in dark mode for them to see the
-  // effect in action
-
-  // https://stackoverflow.com/a/69961228
+  // effect in action.
+  // Helpful guide for developing this effect: https://stackoverflow.com/a/69961228
   import { onMount } from "svelte";
 
   export let date: Date = new Date();
@@ -35,7 +35,9 @@
 
   const darkHourBg = "dark:bg-dark-hour dark:bg-dark-hour-gradient dark:text-green-1";
   const notDarkHourBg = "dark:bg-blue-4 dark:text-blue-3";
-  $: activeBg = true ? darkHourBg : notDarkHourBg;
+  $: activeBg = isDarkHour ? darkHourBg : notDarkHourBg;
+
+  console.log(timezoneIANA);
 
   const checkIfDarkHour = () => {
     date = new Date();
@@ -59,7 +61,6 @@
   });
 </script>
 
-<!-- TODO: add dark hour effects to background -->
 <main class="bg-blue-1 text-blue-4 {activeBg}">
   <slot />
 </main>
