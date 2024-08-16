@@ -7,6 +7,7 @@
 
   export let date: Date = new Date();
 
+  // Get the current user's timezone and hour
   const timezoneIANA = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const defaultLocale = "en-US";
   const dateOptions: Intl.DateTimeFormatOptions = {
@@ -27,10 +28,15 @@
   let currHours = parseTimeStr(dateWithTZ);
   let isDarkHour = currHours != null ? currHours >= 0 && currHours < 1 : false;
   // dark hour colors
-  // bright green: #48ff03
+  // bright green: #48ff03, #3af903
   // dark green: #275721
   // black with green hue: #070803
   // finish gradient: dark -> bright
+
+  const darkHourBg = "dark:bg-dark-hour dark:bg-dark-hour-gradient dark:text-green-1";
+  const notDarkHourBg = "dark:bg-blue-4 dark:text-blue-3";
+  $: activeBg = true ? darkHourBg : notDarkHourBg;
+
   const checkIfDarkHour = () => {
     date = new Date();
     dateWithTZ = date.toLocaleTimeString(defaultLocale, dateOptions);
@@ -54,6 +60,6 @@
 </script>
 
 <!-- TODO: add dark hour effects to background -->
-<main class="bg-blue-1 text-blue-4 dark:bg-blue-4 dark:text-blue-3">
+<main class="bg-blue-1 text-blue-4 {activeBg}">
   <slot />
 </main>
