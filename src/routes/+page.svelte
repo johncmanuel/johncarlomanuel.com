@@ -146,9 +146,9 @@
         >
           {#each Self.skills as skill}
             <span
-              class="flex bg-blue-4 text-blue-3 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-grey-1 dark:text-blue-1"
+              class="flex bg-blue-4 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-grey-1"
             >
-              {skill}
+              <span class="dark:opacity-75">{skill}</span>
             </span>
           {/each}
         </div>
@@ -170,8 +170,8 @@
               <div class="flex flex-row gap-1 flex-wrap">
                 {#each project.tags as tag}
                   <span
-                    class="flex bg-blue-4 text-blue-3 dark:bg-grey-1 dark:text-blue-3 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
-                    >{tag}</span
+                    class="flex bg-blue-4 dark:bg-grey-1 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
+                    ><span class="opacity-75">{tag}</span></span
                   >
                 {/each}
               </div>

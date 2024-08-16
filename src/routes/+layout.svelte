@@ -1,7 +1,8 @@
 <script lang="ts">
   import "../app.css";
+  import DarkHour from "$components/DarkHour/DarkHour.svelte";
 </script>
 
-<main class="bg-blue-1 text-blue-4 dark:bg-blue-4 dark:text-blue-3">
+<DarkHour>
   <slot />
-</main>
+</DarkHour>

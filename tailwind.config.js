@@ -1,5 +1,3 @@
-// const daisyui = require("daisyui");
-
 const personaThreeReloadPalette = {
   // "blue-1": "#6d9ac7",
   "blue-1": "#14c3fc",
@@ -7,7 +5,22 @@ const personaThreeReloadPalette = {
   "blue-3": "#51eefc",
   "blue-4": "#000229",
   "pure-white": "#ffffff",
-  "grey-1": "#303030"
+  "grey-1": "#303030",
+  "green-1": "#3af903",
+  "green-2": "#48ff03"
+};
+
+// Utilized https://www.csshero.org/mesher/ to create these gradients.
+const darkHourGradient = {
+  "dark-hour-gradient": `
+         radial-gradient(at 92% 23%, hsla(97,100%,19%,1) 0px, transparent 50%),
+radial-gradient(at 21% 37%, hsla(104,62%,17%,1) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(99,31%,9%,1) 0px, transparent 50%);
+        `
+};
+
+const darkHour = {
+  "dark-hour": "hsla(99,52%,10%,1)"
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -16,7 +29,9 @@ export default {
   blocklist: ["ring"],
   theme: {
     extend: {
-      colors: personaThreeReloadPalette
+      colors: personaThreeReloadPalette,
+      backgroundImage: darkHourGradient,
+      backgroundColor: darkHour
     }
     // container: {
     //   center: true,
@@ -26,7 +41,4 @@ export default {
     // }
   },
   darkMode: "selector"
-  // plugins: [daisyui],
-  // coffee best theme frl
-  // daisyui: { themes: ["fantasy", "coffee"] }
 };
