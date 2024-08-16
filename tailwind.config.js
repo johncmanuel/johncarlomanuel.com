@@ -13,9 +13,9 @@ const personaThreeReloadPalette = {
 // Utilized https://www.csshero.org/mesher/ to create these gradients.
 const darkHourGradient = {
   "dark-hour-gradient": `
-          radial-gradient(at 80% 7%, hsla(124,55%,20%,1) 0px, transparent 50%),
-          radial-gradient(at 40% 20%, hsla(104,62%,17%,1) 0px, transparent 50%),
-          radial-gradient(at 0% 0%, hsla(99,31%,9%,1) 0px, transparent 50%)
+         radial-gradient(at 92% 23%, hsla(97,100%,19%,1) 0px, transparent 50%),
+radial-gradient(at 21% 37%, hsla(104,62%,17%,1) 0px, transparent 50%),
+radial-gradient(at 0% 0%, hsla(99,31%,9%,1) 0px, transparent 50%);
         `
 };
 
