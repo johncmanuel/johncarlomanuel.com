@@ -31,7 +31,21 @@ export default {
     extend: {
       colors: personaThreeReloadPalette,
       backgroundImage: darkHourGradient,
-      backgroundColor: darkHour
+      backgroundColor: darkHour,
+      animation: {
+        marquee: "marquee 200s linear infinite",
+        marquee2: "marquee2 200s linear infinite"
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" }
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" }
+        }
+      }
     }
     // container: {
     //   center: true,

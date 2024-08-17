@@ -15,6 +15,8 @@
   import ThemeToggle from "$components/ThemeToggle/ThemeToggle.svelte";
   import type { PageData } from "./$types";
   import FullMoonTracker from "$components/FullMoonTracker/FullMoonTracker.svelte";
+  import Marquee from "$components/Marquee/Marquee.svelte";
+  import MarqueeItems from "$lib/public/marquee";
 
   const currUrl = new URL($page.url).href;
   const date = new Date();
@@ -38,6 +40,8 @@
   const youtubeUrl = Links["youtube"];
   const emailUrl = Links["email"];
   const blogUrl = Links["blog"];
+
+  const personaQuotes = MarqueeItems.persona;
 </script>
 
 <MetaTags
@@ -126,6 +130,7 @@
     </div>
   </div>
   <div class="flex flex-col gap-12 md:gap-10">
+    <Marquee items={personaQuotes} />
     <!-- <div id="experience" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">experience</h1>
