@@ -7,7 +7,8 @@ const personaThreeReloadPalette = {
   "pure-white": "#ffffff",
   "grey-1": "#303030",
   "green-1": "#3af903",
-  "green-2": "#48ff03"
+  "green-2": "#48ff03",
+  "yellow-1": "#ebe400"
 };
 
 // Utilized https://www.csshero.org/mesher/ to create these gradients.
