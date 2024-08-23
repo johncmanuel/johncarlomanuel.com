@@ -1,5 +1,6 @@
 <script>
   import { page } from "$app/stores";
+  import Game from "$lib/game/404Game.svelte";
 </script>
 
 <svelte:head>
@@ -27,3 +28,5 @@
     </div>
   </div>
 </section>
+
+<Game />
