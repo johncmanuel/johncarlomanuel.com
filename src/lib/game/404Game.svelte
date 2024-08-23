@@ -2,6 +2,7 @@
   import * as PIXI from "pixi.js";
   import { onDestroy, onMount } from "svelte";
   import Manifest from "./manifest";
+  import { background } from "./bundles";
 
   onMount(async () => {
     // PIXI.TexturePool.textureOptions.scaleMode = "nearest";
@@ -15,25 +16,31 @@
     document.body.appendChild(app.canvas);
 
     let player = new PIXI.Graphics().rect(0, 0, 50, 50).fill(0xff0000);
+
+    await PIXI.Assets.loadBundle(background.name);
+
+    const createBackground = (texture: PIXI.Texture): PIXI.TilingSprite => {
+      const tiling = new PIXI.TilingSprite({
+        texture: texture
+      });
+      const scale = Math.max(
+        window.innerWidth / tiling.texture.width,
+        window.innerHeight / tiling.texture.height
+      );
+      tiling.position.set(0, 0);
+      tiling.scale.set(scale, scale);
+      app.stage.addChild(tiling);
+      return tiling;
+    };
+
+    // Render and track the background sprites
+    const backgroundLayers: PIXI.TilingSprite[] = [];
+    for (let i = background.assets.length - 1; i >= 0; i--) {
+      const t = createBackground(PIXI.Texture.from(background.assets[i].src));
+      backgroundLayers.push(t);
+    }
+
     app.stage.addChild(player);
-
-    const backgroundLabel = "background";
-    const backgroundAssets = await PIXI.Assets.loadBundle(backgroundLabel);
-    console.log(backgroundAssets);
-
-    const s = new PIXI.TilingSprite({
-      texture: backgroundAssets.layer1
-      // width: app.screen.width,
-      // height: app.screen.height
-    });
-    const scale = Math.max(
-      window.innerWidth / s.texture.width,
-      window.innerHeight / s.texture.height
-    );
-    s.scale.set(scale, scale);
-
-    app.stage.addChild(s);
-
     // Add a ticker callback to move the sprite back and forth
     let elapsed = 0.0;
     app.ticker.add((ticker) => {
