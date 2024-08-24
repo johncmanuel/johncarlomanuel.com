@@ -1,4 +1,7 @@
 <script lang="ts">
+  // NOTE: May not make playable on mobile and instead show a default 404 page.
+  // I'll probably do some CSS media query magic
+
   import * as PIXI from "pixi.js";
   import { onDestroy, onMount } from "svelte";
   import Manifest from "./manifest";
@@ -15,7 +18,16 @@
     await app.init({ width: window.innerWidth, height: window.innerHeight, resizeTo: window });
     document.body.appendChild(app.canvas);
 
-    let player = new PIXI.Graphics().rect(0, 0, 50, 50).fill(0xff0000);
+    const keys: Record<string, boolean> = {};
+
+    window.addEventListener("keydown", (e: KeyboardEvent) => {
+      keys[e.key] = true;
+    });
+    window.addEventListener("keyup", (e: KeyboardEvent) => {
+      keys[e.key] = false;
+    });
+
+    let player = new PIXI.Graphics().rect(0, window.innerHeight - 50, 50, 50).fill(0xff0000);
 
     await PIXI.Assets.loadBundle(background.name);
 
@@ -34,19 +46,28 @@
     };
 
     // Render and track the background sprites
+    // TODO: Fix typing issues with background.assets
     const backgroundLayers: PIXI.TilingSprite[] = [];
     for (let i = background.assets.length - 1; i >= 0; i--) {
       const t = createBackground(PIXI.Texture.from(background.assets[i].src));
       backgroundLayers.push(t);
     }
 
+    // Manage background speed
+    const bgSpeed = 0.5;
+    let bgX = 0;
+
     app.stage.addChild(player);
-    // Add a ticker callback to move the sprite back and forth
-    let elapsed = 0.0;
-    app.ticker.add((ticker) => {
-      elapsed += ticker.deltaTime;
-      player.x = 100.0 + Math.cos(elapsed / 50.0) * 100.0;
-    });
+
+    const gameLoop = (ticker: PIXI.Ticker) => {
+      bgX = bgX + bgSpeed;
+      for (let i = backgroundLayers.length - 1; i >= 0; i--) {
+        backgroundLayers[i].tilePosition.x = bgX / i;
+      }
+      console.log(keys);
+    };
+
+    app.ticker.add(gameLoop);
   });
 
   onDestroy(() => {});
