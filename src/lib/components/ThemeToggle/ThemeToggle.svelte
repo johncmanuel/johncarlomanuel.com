@@ -29,18 +29,9 @@
       document.documentElement.classList.remove(dark);
       darkMode = false;
     }
+    console.log(document.documentElement.classList);
   }
 </script>
-
-<!-- Avoid FOUC: https://flowbite.com/docs/customize/dark-mode/ -->
-<svelte:head>
-  <script>
-    localStorage.getItem("dark") === "dark" ||
-    (!("dark" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
-  </script>
-</svelte:head>
 
 <div class="flex self-center">
   <input checked={darkMode} on:click={handleSwitchDarkMode} type="checkbox" id="theme-toggle" />
