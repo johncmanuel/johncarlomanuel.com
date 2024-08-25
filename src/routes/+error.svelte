@@ -1,7 +1,8 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import Game from "$lib/game/404Game.svelte";
+  // import Game from "$lib/game/404Game.svelte";
   import { onMount } from "svelte";
+  import Link from "$components/Link/Link.svelte";
 
   $: isDesktop = false;
 
@@ -24,7 +25,7 @@
 
 <section
   id="errorpage"
-  class="flex flex-col justify-center gap-6 md:gap-4 items-center w-screen h-screen md:pb-20"
+  class="flex flex-col justify-center gap-8 md:gap-4 items-center w-screen h-screen md:pb-20"
 >
   <img
     src="/assets/respcodes/404.png"
@@ -32,21 +33,32 @@
     alt="Vtuber 404 logo"
     title={$page.error?.message}
   />
-  <div class="flex flex-col gap-2 text-lg">
-    <span
-      >Logo credits: <a href={sawaratsukiLink} target="_blank" class="no-underline hover:underline"
-        >{sawaratsuki}</a
-      ></span
-    >
-    <span
-      >Logo source: <a
+  <div class="flex flex-col gap-6 md:gap-8 text-lg items-center">
+    <span class="flex flex-row">
+      Logo credits:&nbsp
+      <Link
+        href={sawaratsukiLink}
+        additionalText={sawaratsuki}
+        aClass={"flex flex-row gap-1 flex-wrap hover:underline"}
+        additionalTextClass={"text-lg"}
+        omitHref={true}
+      />
+    </span>
+    <span class="flex flex-row">
+      Logo source:&nbsp
+      <Link
         href={`${sawaratsukiLink}${sawaratsukiLogoRepo}/`}
-        target="_blank"
-        class="no-underline hover:underline">{sawaratsukiLogoRepo}</a
-      ></span
-    >
+        additionalText={sawaratsukiLogoRepo}
+        aClass={"flex flex-row gap-1 flex-wrap hover:underline"}
+        additionalTextClass={"text-lg"}
+        omitHref={true}
+      />
+    </span>
+
+    <!-- no need to use Link component for this -->
+    <a href="/" aria-label="Button to go back to homepage">Click me to go back home!</a>
   </div>
-  <a href="/" aria-label="Button to go back to homepage">Click me to go back home!</a>
+
   <!-- <h2 class="flex flex-row text-4xl font-bold pb-10 text-center">Go home?</h2>
   <div class="join gap-16 lg:gap-8">
     <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">Yes</a>
