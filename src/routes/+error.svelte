@@ -1,6 +1,17 @@
-<script>
+<script lang="ts">
   import { page } from "$app/stores";
   import Game from "$lib/game/404Game.svelte";
+  import { onMount } from "svelte";
+
+  $: isDesktop = false;
+
+  // Using TailwindCSS's default breakpoint for medium-sized devices
+  // https://tailwindcss.com/docs/responsive-design
+  const minWidthPixels = 768;
+
+  onMount(() => {
+    isDesktop = window.innerWidth >= minWidthPixels;
+  });
 </script>
 
 <svelte:head>
@@ -29,4 +40,6 @@
   </div>
 </section>
 
-<Game />
+{#if isDesktop}
+  <Game />
+{/if}
