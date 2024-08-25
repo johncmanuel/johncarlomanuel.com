@@ -28,7 +28,7 @@
 >
   <img
     src="/assets/respcodes/404.png"
-    class="flex max-w-md md:max-w-4xl pb-10"
+    class="flex max-w-md md:max-w-4xl pb-10 drop-shadow-2xl"
     alt="Vtuber 404 logo"
     title={$page.error?.message}
   />
