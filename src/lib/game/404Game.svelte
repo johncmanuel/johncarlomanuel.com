@@ -71,7 +71,7 @@
       for (let i = backgroundLayers.length - 1; i >= 0; i--) {
         backgroundLayers[i].tilePosition.x = bgX / i;
       }
-      console.log(keys);
+      // console.log(keys);
     };
 
     app.ticker.add(gameLoop);

@@ -9,6 +9,10 @@
   // https://tailwindcss.com/docs/responsive-design
   const minWidthPixels = 768;
 
+  const sawaratsuki = "SWARATSUKI";
+  const sawaratsukiLink = "https://github.com/SAWARATSUKI/";
+  const sawaratsukiLogoRepo = "KawaiiLogos";
+
   onMount(() => {
     isDesktop = window.innerWidth >= minWidthPixels;
   });
@@ -18,28 +22,39 @@
   <title>{$page.status || 404} / John Carlo Manuel</title>
 </svelte:head>
 
-<section title={$page.error?.message}>
-  <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content text-center">
-      <div class="max-w-md">
-        <h1 class="text-5xl font-bold pb-10 text-center lg:pb-20">
-          {$page.status} - {$page.error?.message}
-        </h1>
-        <img
-          src="/assets/chopper.gif"
-          class="scale-100 pb-10 lg:scale-125 lg:pb-20"
-          alt="Chopper dancing"
-        />
-        <h2 class="text-4xl font-bold pb-10 text-center lg:pb-15">Go home?</h2>
-        <div class="join gap-16 lg:gap-8">
-          <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">Yes</a>
-          <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">YES</a>
-        </div>
-      </div>
-    </div>
+<section
+  id="errorpage"
+  class="flex flex-col justify-center gap-6 md:gap-4 items-center w-screen h-screen md:pb-20"
+>
+  <img
+    src="/assets/respcodes/404.png"
+    class="flex max-w-md md:max-w-4xl pb-10"
+    alt="Vtuber 404 logo"
+    title={$page.error?.message}
+  />
+  <div class="flex flex-col gap-2 text-lg">
+    <span
+      >Logo credits: <a href={sawaratsukiLink} target="_blank" class="no-underline hover:underline"
+        >{sawaratsuki}</a
+      ></span
+    >
+    <span
+      >Logo source: <a
+        href={`${sawaratsukiLink}${sawaratsukiLogoRepo}/`}
+        target="_blank"
+        class="no-underline hover:underline">{sawaratsukiLogoRepo}</a
+      ></span
+    >
   </div>
+  <a href="/" aria-label="Button to go back to homepage">Click me to go back home!</a>
+  <!-- <h2 class="flex flex-row text-4xl font-bold pb-10 text-center">Go home?</h2>
+  <div class="join gap-16 lg:gap-8">
+    <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">Yes</a>
+    <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">YES</a>
+  </div> -->
 </section>
 
-{#if isDesktop}
+<!-- Commenting out for now -->
+<!-- {#if isDesktop}
   <Game />
-{/if}
+{/if} -->
