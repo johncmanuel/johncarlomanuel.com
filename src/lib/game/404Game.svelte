@@ -19,12 +19,19 @@
     document.body.appendChild(app.canvas);
 
     const keys: Record<string, boolean> = {};
+    enum PlayerControls {
+      Space = " "
+    }
 
     window.addEventListener("keydown", (e: KeyboardEvent) => {
-      keys[e.key] = true;
+      if (Object.values<string>(PlayerControls).includes(e.key)) {
+        keys[e.key] = true;
+      }
     });
     window.addEventListener("keyup", (e: KeyboardEvent) => {
-      keys[e.key] = false;
+      if (Object.values<string>(PlayerControls).includes(e.key)) {
+        keys[e.key] = false;
+      }
     });
 
     let player = new PIXI.Graphics().rect(0, window.innerHeight - 50, 50, 50).fill(0xff0000);
@@ -55,7 +62,7 @@
 
     // Manage background speed
     const bgSpeed = 0.5;
-    let bgX = 0;
+    let bgX = 0.0;
 
     app.stage.addChild(player);
 
