@@ -4,7 +4,7 @@ Personal website version 4 i think.
 
 Some ideas that came to mind as of now:
 
-1. custom retro-like game library at games.johncarlomanuel.com
+1. custom retro-like game library at games.johncarlomanuel.com or hidden inside the 404 page
    -> would contain fighting, card, puzzle, and platform games, all built into website.
    will keep it simple tho, i don't want to overwhelm myself. after building the games, could
    implement leaderboards to see who scored the highest (but not top priority).
