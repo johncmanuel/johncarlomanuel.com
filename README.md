@@ -1,6 +1,6 @@
 # johncarlomanuel.com
 
-Personal website version version 4. Aside from showing the usual information on a portfolio site, this will embed some cool stuff (on the frontend) such as video games and visuals as well as backend things.
+Personal website version 4 i think.
 
 Some ideas that came to mind as of now:
 
@@ -13,15 +13,10 @@ Some ideas that came to mind as of now:
    -> could experiment with running Ren'Py visual novels in browser using WebAssembly. see <https://www.renpy.org/doc/html/web.html>.
    this would possibly require another server to serve these games.
    -> Thus, may need to create different repos for different apps, then serve them under games.johncarlomanuel.com subdomain.
-2. cool 404 page platformer game
-3. make experience page to list all my experiences (could automatically be done via LinkedIn API since i tend to list my experiences there first)
-4. create an interactive library of the video games and music via steam and spotify apis
-   -> cache it on my DB (prob firestore)
-   -> see <https://games.thicc-thighs.de/>
-5. add special fx on website according to the dates
+2. cool 404 page platformer game (currently working on it)
+3. add special fx on website according to the dates
    -> i.e snowflakes falling from top of screen to down during December
    -> can be a game where you click snowflakes and get points saved in localstorage
-6. rework the css; i need that stands out better
 
 ## create-svelte
 
