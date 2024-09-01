@@ -6,7 +6,7 @@ Some ideas that came to mind as of now:
 
 1. custom retro-like game library at games.johncarlomanuel.com or hidden inside the 404 page
    -> would contain fighting, card, puzzle, and platform single-player games, all built into website.
-   will keep it simple tho, i don't want to overwhelm myself.   
+   will keep it simple tho, i don't want to overwhelm myself.  
     -> reference for this: <https://www.reddit.com/r/sveltejs/comments/wq27w1/i_made_some_games_using_svelte/>
    -> could experiment with running Ren'Py visual novels in browser using WebAssembly. see <https://www.renpy.org/doc/html/web.html>.
    this would possibly require a server to serve these games.
