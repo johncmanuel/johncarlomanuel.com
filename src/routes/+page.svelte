@@ -1,13 +1,7 @@
 <script lang="ts">
-  // TODO: 1-2 sentence summary about each experience from resume repo
-  // TODO: 1-2 sentence summary + tag for each skill for each project from resume repo
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import GitHub from "virtual:icons/fa6-brands/github";
-  import LinkedIn from "virtual:icons/fa6-brands/linkedin";
-  import Twitter from "virtual:icons/fa6-brands/twitter";
-  import Youtube from "virtual:icons/fa6-brands/youtube";
-  import Email from "virtual:icons/fa6-solid/envelope";
+  import { GitHub, LinkedIn, Email, Twitter, Youtube } from "$components/Icons/SocialMedia";
   import Webring from "$components/Webring/Webring.svelte";
   import Self from "$lib/public/self";
   import Link from "$components/Link/Link.svelte";
