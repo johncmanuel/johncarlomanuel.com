@@ -6,8 +6,12 @@
   import { onDestroy, onMount } from "svelte";
   import Manifest from "./manifest";
   import { background } from "./bundles";
+  import { Engine, Bodies, World } from "matter-js";
 
   onMount(async () => {
+
+    const engine = Engine.create();
+
     // PIXI.TexturePool.textureOptions.scaleMode = "nearest";
     // Game is mainly pixel art based, so scale mode to nearest for all
     // textures
@@ -66,7 +70,7 @@
 
     app.stage.addChild(player);
 
-    const gameLoop = (ticker: PIXI.Ticker) => {
+    const pixiGameLoop = (ticker: PIXI.Ticker) => {
       bgX = bgX + bgSpeed;
       for (let i = backgroundLayers.length - 1; i >= 0; i--) {
         backgroundLayers[i].tilePosition.x = bgX / i;
@@ -74,7 +78,8 @@
       // console.log(keys);
     };
 
-    app.ticker.add(gameLoop);
+    app.ticker.add(pixiGameLoop);
+
   });
 
   onDestroy(() => {});

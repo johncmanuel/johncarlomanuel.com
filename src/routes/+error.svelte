@@ -1,15 +1,15 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  // import Game from "$lib/game/404Game.svelte";
+  import Game from "$lib/game/404Game.svelte";
   import { onMount } from "svelte";
   import Link from "$components/Link/Link.svelte";
   import ErrorLogos from "$lib/public/errors";
 
-  // $: isDesktop = false;
+  $: isDesktop = false;
 
   // Using TailwindCSS's default breakpoint for medium-sized devices
   // https://tailwindcss.com/docs/responsive-design
-  // const minWidthPixels = 768;
+  const minWidthPixels = 768;
 
   // Mainly using Sawaratsuki's logos, so give credits.
   const sawaratsuki = "SWARATSUKI";
@@ -21,7 +21,7 @@
   if ($page.status == 418) console.log("congrats on finding this easter egg :D");
 
   onMount(() => {
-    // isDesktop = window.innerWidth >= minWidthPixels;
+    isDesktop = window.innerWidth >= minWidthPixels;
   });
 </script>
 
@@ -73,6 +73,6 @@
 </section>
 
 <!-- Commenting out for now -->
-<!-- {#if isDesktop}
+{#if isDesktop}
   <Game />
-{/if} -->
+{/if}
