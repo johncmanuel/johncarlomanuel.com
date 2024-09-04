@@ -1,6 +1,7 @@
 <script lang="ts">
   // NOTE: May not make playable on mobile and instead show a default 404 page.
   // I'll probably do some CSS media query magic
+  // Guides used: https://codepen.io/celsowhite/pen/XWbEzpx?editors=0010
 
   import * as PIXI from "pixi.js";
   import { onDestroy, onMount } from "svelte";
