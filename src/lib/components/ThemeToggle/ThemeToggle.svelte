@@ -2,10 +2,14 @@
   // source for theme toggle:
   // https://dev.to/willkre/persistent-theme-switch-dark-mode-with-svelte-sveltekit-tailwind-1b9g
   import { browser } from "$app/environment";
+  import { getMoonPhaseEmoji } from "$components/FullMoonTracker/lunar";
+  import { onMount } from "svelte";
 
   let darkMode = true;
   const theme = "color-theme";
   const dark = "dark";
+  let date = new Date();
+  let moonEmoji = getMoonPhaseEmoji(date);
 
   const handleSwitchDarkMode = () => {
     darkMode = !darkMode;
@@ -21,7 +25,8 @@
   if (browser) {
     const isAlreadyDark =
       localStorage.getItem(theme) === dark ||
-      (!(theme in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      (!(theme in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
     if (isAlreadyDark) {
       document.documentElement.classList.add(dark);
       darkMode = true;
@@ -31,28 +36,45 @@
     }
     console.log(document.documentElement.classList);
   }
+
+  // Set timeout to be at least 10 ms to be on the safe side.
+  // https://stackoverflow.com/a/7648619
+  const TIMEOUT_MS = 10;
+
+  let interval: number | undefined;
+
+  onMount(() => {
+    interval = setInterval(() => {
+      // Update moon emoji every interval
+      date = new Date();
+      moonEmoji = getMoonPhaseEmoji();
+    }, TIMEOUT_MS);
+    return () => clearInterval(interval);
+  });
 </script>
 
 <div class="flex self-center">
-  <input checked={darkMode} on:click={handleSwitchDarkMode} type="checkbox" id="theme-toggle" />
-  <label for="theme-toggle" />
+  <input
+    checked={darkMode}
+    on:click={handleSwitchDarkMode}
+    type="checkbox"
+    id="theme-toggle"
+    class="hidden"
+  />
+  <label for="theme-toggle">
+    <span
+      class="absolute transition-opacity duration-300 ease-in-out"
+      class:opacity-0={darkMode}
+      class:opacity-100={!darkMode}
+    >
+      ☀️
+    </span>
+    <span
+      class="transition-opacity duration-300 ease-in-out"
+      class:opacity-0={!darkMode}
+      class:opacity-100={darkMode}
+    >
+      {moonEmoji}
+    </span>
+  </label>
 </div>
-
-<style lang="postcss">
-  #theme-toggle {
-    @apply invisible;
-  }
-
-  #theme-toggle + label {
-    @apply cursor-pointer h-9 w-9 rounded-full duration-300 content-[''];
-  }
-
-  #theme-toggle:not(:checked) + label {
-    @apply bg-amber-300;
-  }
-
-  #theme-toggle:checked + label {
-    @apply bg-transparent;
-    box-shadow: inset -13px -10px 1px 1px #d6ff7d;
-  }
-</style>

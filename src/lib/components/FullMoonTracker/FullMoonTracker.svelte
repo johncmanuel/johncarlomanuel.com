@@ -1,23 +1,29 @@
 <script lang="ts">
-  import { isFullMoon, getLunarAge, getLunarAgePercent } from "./lunar";
+  import {
+    isFullMoon,
+    getLunarAge,
+    getLunarAgePercent,
+    getMoonPhaseEmoji,
+  } from "./lunar";
   import { MoonPhaseEmoji, LunarAgeBounds } from "./lunarenums";
   import { onMount } from "svelte";
 
   const FULL_MOON_EMOJI = MoonPhaseEmoji.FULL_MOON;
   const LOWER_THRESHOLD_DAYS = LunarAgeBounds.WAXING_GIBBOUS;
   const HIGHER_THRESHOLD_DAYS = LunarAgeBounds.FULL_MOON;
-  const NOT_FULL_MOON_EMOJI = "❌";
 
   export let date: Date = new Date();
   let _isFullMoon = isFullMoon(date);
   let lunarAge = getLunarAge(date);
   let lunarAgePercent = getLunarAgePercent(date);
+  let moonEmoji = getMoonPhaseEmoji();
 
   const updateDate = () => {
     date = new Date();
     _isFullMoon = isFullMoon(date);
     lunarAge = getLunarAge(date);
     lunarAgePercent = getLunarAgePercent(date);
+    moonEmoji = getMoonPhaseEmoji(date);
   };
 
   // Set timeout to be at least 10 ms to be on the safe side.
@@ -35,7 +41,7 @@
   {#if _isFullMoon}
     <p>{FULL_MOON_EMOJI} it's full moon again, crazy how time flies.</p>
   {:else}
-    <p>{NOT_FULL_MOON_EMOJI} it's not a full moon, yet.</p>
+    <p>{moonEmoji} it's not a full moon... yet.</p>
   {/if}
   <h2 class="text-xl">stats</h2>
   <ul class="px-4">
