@@ -1,14 +1,11 @@
 <script lang="ts">
-  import {
-    isFullMoon,
-    HIGHER_THRESHOLD_DAYS,
-    LOWER_THRESHOLD_DAYS,
-    FULL_MOON_EMOJI,
-    getLunarAge,
-    getLunarAgePercent,
-  } from "./lunar";
+  import { isFullMoon, getLunarAge, getLunarAgePercent } from "./lunar";
+  import { MoonPhaseEmoji, LunarAgeBounds } from "./lunarenums";
   import { onMount } from "svelte";
 
+  const FULL_MOON_EMOJI = MoonPhaseEmoji.FULL_MOON;
+  const LOWER_THRESHOLD_DAYS = LunarAgeBounds.WAXING_GIBBOUS;
+  const HIGHER_THRESHOLD_DAYS = LunarAgeBounds.FULL_MOON;
   const NOT_FULL_MOON_EMOJI = "❌";
 
   export let date: Date = new Date();
