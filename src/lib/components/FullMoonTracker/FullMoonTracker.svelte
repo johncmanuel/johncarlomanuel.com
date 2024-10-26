@@ -5,7 +5,7 @@
     LOWER_THRESHOLD_DAYS,
     FULL_MOON_EMOJI,
     getLunarAge,
-    getLunarAgePercent
+    getLunarAgePercent,
   } from "./lunar";
   import { onMount } from "svelte";
 
@@ -48,6 +48,8 @@
     </li>
     <li>lunarAgePercent: {lunarAgePercent}</li>
     <li>isFullMoon: {_isFullMoon}</li>
-    <li>fullmoon range: between {LOWER_THRESHOLD_DAYS} and {HIGHER_THRESHOLD_DAYS}</li>
+    <li>
+      fullmoon range: between {LOWER_THRESHOLD_DAYS} and {HIGHER_THRESHOLD_DAYS}
+    </li>
   </ul>
 </div>
