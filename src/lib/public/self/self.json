@@ -17,15 +17,6 @@
     "Git",
     "Docker"
   ],
-  "coursework": [
-    "Software Engineering",
-    "Database Systems",
-    "Algorithms & Data Structures",
-    "Computer Organization and Assembly Language",
-    "Intro to Game Design",
-    "Discrete Mathematics",
-    "Linear Algebra"
-  ],
   "projects": [
     {
       "name": "bettercs",

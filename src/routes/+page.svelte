@@ -1,7 +1,13 @@
 <script lang="ts">
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import { GitHub, LinkedIn, Email, Twitter, Youtube } from "$components/Icons/SocialMedia";
+  import {
+    GitHub,
+    LinkedIn,
+    Email,
+    Twitter,
+    Youtube,
+  } from "$components/Icons/SocialMedia";
   import Webring from "$components/Webring/Webring.svelte";
   import Self from "$lib/public/self";
   import Link from "$components/Link/Link.svelte";
@@ -48,18 +54,20 @@
     description: desc,
     image: avatar,
     imageAlt: avatarAlt,
-    handle: "@johncmanuel"
+    handle: "@johncmanuel",
   }}
   openGraph={{
     title: name,
     description: desc,
     url: currUrl,
     image: avatar,
-    imageAlt: avatarAlt
+    imageAlt: avatarAlt,
   }}
 />
 
-<div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto">
+<div
+  class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto"
+>
   <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
     <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
       <!-- The hero img doesn't show entirely, where the bottom doesn't completely show 
@@ -79,10 +87,11 @@
       <p>
         Software engineer and computer science student at <b
           >California State University, Fullerton</b
-        >. I'm interested in <b>full-stack development</b>, <b>game development</b>, and
-        <b>distributed systems</b>. Outside of engineering, I enjoy diving into creative endeavors
-        such as writing and worldbuilding. I'm also a cool gamer that mainly plays (MMO)RPGs and
-        narrative-driven games.
+        >. I'm interested in <b>full-stack development</b>,
+        <b>game development</b>, and
+        <b>distributed systems</b>. Outside of engineering, I enjoy diving into
+        creative endeavors such as writing and worldbuilding. I'm also a cool
+        gamer that mainly plays (MMO)RPGs and narrative-driven games.
       </p>
       <div class="flex gap-3">
         <a href={githubUrl} target="_blank" aria-label="GitHub">
@@ -185,23 +194,13 @@
         />
       </div>
     </div>
-    <div id="coursework" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">relevant coursework</h1>
-        <ul
-          class="flex flex-wrap items-start flex-col justify-start gap-2 md:gap-3 px-4 dark:opacity-75"
-        >
-          {#each Self.coursework as course}
-            <li class="flex flex-nowrap">• {course}</li>
-          {/each}
-        </ul>
-      </div>
-    </div>
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-xl">recent registers</h1>
         {#if recentPosts.length !== 0}
-          <div class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75">
+          <div
+            class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75"
+          >
             {#each recentPosts as post}
               <article class="flex flex-col gap-1">
                 <Link
@@ -225,8 +224,12 @@
             />
           </h2>
         {:else}
-          <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
-            <span class="text-lg">unable to fetch the latest registers... :(</span>
+          <div
+            class="flex items-start flex-col justify-center gap-5 px-4 opacity-75"
+          >
+            <span class="text-lg"
+              >unable to fetch the latest registers... :(</span
+            >
           </div>
           <h2>
             <Link
