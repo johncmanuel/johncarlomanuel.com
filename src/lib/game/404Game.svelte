@@ -21,6 +21,10 @@
     const SPEED_INCREMENT = 0.01;
     const GROUND_HEIGHT = window.innerHeight - 50;
 
+    const highScoreKey = "highScore";
+    const currentHighScore =
+      parseInt(localStorage.getItem(highScoreKey) as string) || 0;
+
     // Game state
     const gameState: GameState = {
       isGameOver: false,
@@ -94,7 +98,7 @@
 
     // Instructions text
     const instructionsText = new PIXI.Text(
-      "Press SPACE or UP to jump\nAvoid obstacles!",
+      "Press SPACE to jump\nAvoid obstacles!",
       createTextStyle(20),
     );
     instructionsText.anchor.set(0.5);
@@ -147,6 +151,12 @@
     const scoreText = new PIXI.Text("Score: 0", createTextStyle(24));
     scoreText.position.set(20, 20);
 
+    const highScoreText = new PIXI.Text(
+      `High Score: ${currentHighScore}`,
+      createTextStyle(24),
+    );
+    highScoreText.position.set(20, 50);
+
     const gameOverText = new PIXI.Text(
       "Game Over!\nPress SPACE to restart",
       createTextStyle(36),
@@ -188,6 +198,7 @@
     app.stage.addChild(gameOverText);
     app.stage.addChild(playButton);
     app.stage.addChild(instructionsText);
+    app.stage.addChild(highScoreText);
 
     function restartGame() {
       gameState.isGameOver = false;
@@ -208,6 +219,15 @@
     function handleGameOver() {
       gameState.isGameOver = true;
       gameOverText.visible = true;
+
+      // Save score to local storage
+      const score = Math.max(
+        parseInt(localStorage.getItem(highScoreKey) as string) || 0,
+        gameState.score,
+      );
+
+      localStorage.setItem(highScoreKey, score.toString());
+      highScoreText.text = `High Score: ${score}`;
     }
 
     function startGame() {

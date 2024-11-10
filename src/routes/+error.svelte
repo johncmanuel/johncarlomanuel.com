@@ -1,15 +1,15 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  // import Game from "$lib/game/404Game.svelte";
+  import Game from "$lib/game/404Game.svelte";
   import { onMount } from "svelte";
   import Link from "$components/Link/Link.svelte";
   import ErrorLogos from "$lib/public/errors";
 
-  // $: isDesktop = false;
+  $: isDesktop = false;
 
   // Using TailwindCSS's default breakpoint for medium-sized devices
   // https://tailwindcss.com/docs/responsive-design
-  // const minWidthPixels = 768;
+  const minWidthPixels = 768;
 
   // Mainly using Sawaratsuki's logos, so give credits.
   const sawaratsuki = "SWARATSUKI";
@@ -19,7 +19,7 @@
   const errorLogoSrc = ErrorLogos[$page.status] ?? ErrorLogos[404];
 
   onMount(() => {
-    // isDesktop = window.innerWidth >= minWidthPixels;
+    isDesktop = window.innerWidth >= minWidthPixels;
   });
 </script>
 
@@ -64,15 +64,8 @@
       >Click me to go back home!</a
     >
   </div>
-
-  <!-- <h2 class="flex flex-row text-4xl font-bold pb-10 text-center">Go home?</h2>
-  <div class="join gap-16 lg:gap-8">
-    <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">Yes</a>
-    <a class="btn btn-primary btn-lg" aria-label="Button to go home" href="/">YES</a>
-  </div> -->
 </section>
 
-<!-- Commenting out for now -->
-<!-- {#if isDesktop}
+{#if isDesktop}
   <Game />
-{/if} -->
+{/if}
