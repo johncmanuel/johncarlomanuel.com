@@ -7,6 +7,7 @@
   import Manifest from "./manifest";
   import { background } from "./bundles";
   import type { GameObject, GameState } from "./types";
+  import { createGameTexts, type GameTexts } from "./text";
 
   onMount(async () => {
     // PIXI.TexturePool.textureOptions.scaleMode = "nearest";
@@ -68,24 +69,22 @@
       }
     });
 
-    const createTextStyle = (size: number): PIXI.TextStyle => {
-      return new PIXI.TextStyle({
-        fontFamily: "Arial",
-        fontSize: size,
-        fill: 0xffffff,
-        align: "center",
-      });
-    };
+    const gameTexts: GameTexts = createGameTexts(
+      window.innerWidth,
+      window.innerHeight,
+    );
+
+    gameTexts.highScoreText.text = `High Score: ${Math.floor(
+      currentHighScore / 10,
+    )}`;
+
     const playButton = new PIXI.Container();
     const buttonBackground = new PIXI.Graphics()
       .rect(0, 0, 200, 50)
       .fill(0x4caf50);
-    const buttonText = new PIXI.Text("PLAY", createTextStyle(24));
-    buttonText.anchor.set(0.5);
-    buttonText.position.set(100, 25);
 
     playButton.addChild(buttonBackground);
-    playButton.addChild(buttonText);
+    playButton.addChild(gameTexts.playButtonText);
     playButton.position.set(
       window.innerWidth / 2 - 100,
       window.innerHeight / 2,
@@ -95,17 +94,6 @@
     playButton.addEventListener("pointertap", () => {
       startGame();
     });
-
-    // Instructions text
-    const instructionsText = new PIXI.Text(
-      "Press SPACE to jump\nAvoid obstacles!",
-      createTextStyle(20),
-    );
-    instructionsText.anchor.set(0.5);
-    instructionsText.position.set(
-      window.innerWidth / 2,
-      window.innerHeight / 2 + 100,
-    );
 
     const player: GameObject = {
       sprite: new PIXI.Graphics().rect(0, 0, 50, 50).fill(0xff0000),
@@ -126,12 +114,49 @@
 
     const obstacles: GameObject[] = [];
     let obstacleSpawnTimer = 0;
-    const OBSTACLE_SPAWN_RATE = 120;
+
+    const OBSTACLE_CONFIG = {
+      minSpawnRate: 60,
+      maxSpawnRate: 120,
+      minHeight: 30,
+      maxHeight: 50,
+      width: 30,
+
+      // Used to calculate difficulty
+      speedThreshold: 100,
+
+      // How much to decrease spawn rate per difficulty increase
+      spawnRateDecrease: 5,
+
+      // Get random spawn rate based on current score
+      getSpawnRate: (score: number): number => {
+        const difficulty = Math.floor(score / OBSTACLE_CONFIG.speedThreshold);
+        const minRate = Math.max(
+          OBSTACLE_CONFIG.minSpawnRate,
+          OBSTACLE_CONFIG.maxSpawnRate -
+            difficulty * OBSTACLE_CONFIG.spawnRateDecrease,
+        );
+        return (
+          minRate + Math.random() * (OBSTACLE_CONFIG.maxSpawnRate - minRate)
+        );
+      },
+
+      // Get random obstacle height
+      getHeight: (): number => {
+        return (
+          OBSTACLE_CONFIG.minHeight +
+          Math.random() *
+            (OBSTACLE_CONFIG.maxHeight - OBSTACLE_CONFIG.minHeight)
+        );
+      },
+    };
 
     function createObstacle(): GameObject {
-      const height = 30 + Math.random() * 20;
+      const height = OBSTACLE_CONFIG.getHeight();
       const obstacle: GameObject = {
-        sprite: new PIXI.Graphics().rect(0, 0, 30, height).fill(0x00ff00),
+        sprite: new PIXI.Graphics()
+          .rect(0, 0, OBSTACLE_CONFIG.width, height)
+          .fill(0x00ff00),
         isColliding: (other: GameObject) => {
           const b1 = obstacle.sprite.getBounds();
           const b2 = other.sprite.getBounds();
@@ -147,23 +172,6 @@
       app.stage.addChild(obstacle.sprite);
       return obstacle;
     }
-
-    const scoreText = new PIXI.Text("Score: 0", createTextStyle(24));
-    scoreText.position.set(20, 20);
-
-    const highScoreText = new PIXI.Text(
-      `High Score: ${currentHighScore}`,
-      createTextStyle(24),
-    );
-    highScoreText.position.set(20, 50);
-
-    const gameOverText = new PIXI.Text(
-      "Game Over!\nPress SPACE to restart",
-      createTextStyle(36),
-    );
-    gameOverText.anchor.set(0.5);
-    gameOverText.position.set(window.innerWidth / 2, window.innerHeight / 2);
-    gameOverText.visible = false;
 
     await PIXI.Assets.loadBundle(background.name);
 
@@ -194,11 +202,12 @@
     let bgX = 0.0;
 
     app.stage.addChild(player.sprite);
-    app.stage.addChild(scoreText);
-    app.stage.addChild(gameOverText);
+    app.stage.addChild(gameTexts.titleText);
+    app.stage.addChild(gameTexts.scoreText);
+    app.stage.addChild(gameTexts.gameOverText);
+    app.stage.addChild(gameTexts.instructionsText);
+    app.stage.addChild(gameTexts.highScoreText);
     app.stage.addChild(playButton);
-    app.stage.addChild(instructionsText);
-    app.stage.addChild(highScoreText);
 
     function restartGame() {
       gameState.isGameOver = false;
@@ -213,21 +222,22 @@
       });
       obstacles.length = 0;
 
-      gameOverText.visible = false;
+      gameTexts.gameOverText.visible = false;
     }
 
     function handleGameOver() {
       gameState.isGameOver = true;
-      gameOverText.visible = true;
+      gameTexts.showGameOver();
 
       // Save score to local storage
       const score = Math.max(
-        parseInt(localStorage.getItem(highScoreKey) as string) || 0,
+        Math.floor(
+          (parseInt(localStorage.getItem(highScoreKey) as string) || 0) / 10,
+        ),
         gameState.score,
       );
-
       localStorage.setItem(highScoreKey, score.toString());
-      highScoreText.text = `High Score: ${score}`;
+      gameTexts.scoreText.text = `High Score: ${score}`;
     }
 
     function startGame() {
@@ -236,13 +246,9 @@
       gameState.score = 0;
       gameState.speed = INITIAL_GAME_SPEED;
 
-      // Hide title screen elements
-      playButton.visible = false;
-      instructionsText.visible = false;
-
-      // Show game elements
+      gameTexts.showGameElements();
       player.sprite.visible = true;
-      scoreText.visible = true;
+      playButton.visible = false;
     }
 
     const gameLoop = (ticker: PIXI.Ticker) => {
@@ -251,8 +257,7 @@
       // TODO: Change rate at which score is incremented
       gameState.score += 1;
       gameState.speed += SPEED_INCREMENT;
-
-      scoreText.text = `Score: ${Math.floor(gameState.score / 10)}`;
+      gameTexts.scoreText.text = `Score: ${Math.floor(gameState.score / 10)}`;
 
       bgX += bgSpeed;
       for (let i = backgroundLayers.length - 1; i >= 0; i--) {
@@ -274,10 +279,18 @@
         player.velocity.y = 0;
       }
 
+      // Spawn obstacles
       obstacleSpawnTimer++;
-      if (obstacleSpawnTimer > OBSTACLE_SPAWN_RATE) {
+      const currentSpawnRate = OBSTACLE_CONFIG.getSpawnRate(gameState.score);
+
+      if (obstacleSpawnTimer > currentSpawnRate) {
         obstacles.push(createObstacle());
         obstacleSpawnTimer = 0;
+
+        // Add some variance to the spawn rate
+        const variance = 0.2;
+
+        obstacleSpawnTimer = -Math.random() * (currentSpawnRate * variance);
       }
 
       // Update obstacles
@@ -285,6 +298,7 @@
         const obstacle = obstacles[i];
         obstacle.sprite.position.x -= gameState.speed;
 
+        // Remove if obstacle is off screen
         if (obstacle.sprite.position.x < -50) {
           app.stage.removeChild(obstacle.sprite);
           obstacles.splice(i, 1);
