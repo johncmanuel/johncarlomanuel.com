@@ -18,9 +18,6 @@
 
   const errorLogoSrc = ErrorLogos[$page.status] ?? ErrorLogos[404];
 
-  if ($page.status == 418)
-    console.log("congrats on finding this easter egg :D");
-
   onMount(() => {
     // isDesktop = window.innerWidth >= minWidthPixels;
   });
