@@ -85,15 +85,6 @@
         "c++",
         "robotics"
       ]
-    },
-    {
-      "name": "20 Years",
-      "url": "https://www.amazon.com/dp/B08JRJ1YV6",
-      "desc": "A fantasy, adventure novel written and published in 2020.",
-      "img_url": "/assets/projects/20yrs.webp",
-      "tags": [
-        "writing"
-      ]
     }
   ]
 }
