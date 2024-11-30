@@ -243,6 +243,35 @@
         {/if}
       </div>
     </div>
+
+    <div id="fartlabs" class="flex flex-col gap-4 max-w-full px-4">
+      <div
+        class="flex gap-6 md:gap-4 max-w-full overflow-hidden md:px-4 flex-col"
+      >
+        <h2 class="text-2xl">fart labs</h2>
+        <p class="px-4 md:px-0 dark:opacity-75">
+          Interested in working on some cool software through open source? Join
+          our community!
+        </p>
+        <div class="flex flex-col gap-6 md:gap-1 px-4 md:px-0">
+          <Link
+            href={Links["fartlabs"]}
+            aClass={"flex flex-row flex-wrap gap-1"}
+            additionalText={"Click me to read more!"}
+            additionalTextClass={"text-lg font-bold"}
+            omitHref={false}
+          />
+          <Link
+            href={"https://go.fart.tools/chat"}
+            aClass={"flex flex-row flex-wrap gap-1"}
+            additionalText={"Join our Discord server!"}
+            additionalTextClass={"text-lg font-bold"}
+            omitHref={false}
+          />
+        </div>
+      </div>
+    </div>
+
     <div id="stories" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">recent stories</h1>
@@ -291,37 +320,9 @@
       </div>
     </div>
 
-    <div id="fartlabs" class="flex flex-col gap-4 max-w-full px-4">
-      <div
-        class="flex gap-6 md:gap-4 max-w-full overflow-hidden md:px-4 flex-col"
-      >
-        <h2 class="text-2xl">fart labs</h2>
-        <p class="px-4 md:px-0 dark:opacity-75">
-          Interested in working on some cool software through open source? Join
-          our community!
-        </p>
-        <div class="flex flex-col gap-6 md:gap-1 px-4 md:px-0">
-          <Link
-            href={Links["fartlabs"]}
-            aClass={"flex flex-row flex-wrap gap-1"}
-            additionalText={"Click me to read more!"}
-            additionalTextClass={"text-lg font-bold"}
-            omitHref={false}
-          />
-          <Link
-            href={"https://go.fart.tools/chat"}
-            aClass={"flex flex-row flex-wrap gap-1"}
-            additionalText={"Join our Discord server!"}
-            additionalTextClass={"text-lg font-bold"}
-            omitHref={false}
-          />
-        </div>
-      </div>
-    </div>
-
-    <div id="pubished books" class="flex flex-col gap-4 max-w-full px-4">
+    <div id="books" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h2 class="text-2xl">books</h2>
+        <h2 class="text-2xl">published books</h2>
         <div
           class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75"
         >
