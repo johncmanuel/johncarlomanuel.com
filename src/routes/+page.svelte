@@ -72,9 +72,7 @@
   class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto"
 >
   <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
-    <div class="mx-auto overflow-clip aspect-square max-w-full w-full h-full">
-      <!-- The hero img doesn't show entirely, where the bottom doesn't completely show 
-        if on a Chromium-built browser. But on Firefox, it seems to show perfectly fine.  -->
+    <div class="mx-auto overflow-clip aspect-square w-full">
       <img
         src={heroImgPath}
         class="object-contain max-h-full md:max-h-none max-w-full mx-auto md:mx-0 md:max-w-xs rounded-lg shadow-xl"
