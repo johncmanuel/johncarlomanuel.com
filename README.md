@@ -14,6 +14,7 @@ Some ideas that came to mind as of now:
 3. add special fx on website according to the dates
    -> i.e snowflakes falling from top of screen to down during December
    -> can be a game where you click snowflakes and get points saved in localstorage
+4. maybe a `/setup` for current set ups on all machines i use?
 
 ## create-svelte
 
