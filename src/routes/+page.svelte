@@ -272,54 +272,6 @@
       </div>
     </div>
 
-    <div id="stories" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">recent stories</h1>
-        {#if recentStories.length !== 0}
-          <div
-            class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75"
-          >
-            {#each recentStories as story}
-              <article class="flex flex-col gap-1">
-                <Link
-                  href={removeDoubleSlashes(`${storiesUrl}${story.id}`)}
-                  aClass={"flex flex-row flex-wrap gap-1"}
-                  additionalText={story.title}
-                  additionalTextClass={"text-lg font-bold"}
-                  omitHref={true}
-                />
-                <p>{story.summary}</p>
-                <p class="text-sm">{story.published}</p>
-              </article>
-            {/each}
-          </div>
-          <h2>
-            <Link
-              href={storiesUrl}
-              aClass={"flex gap-1 py-4 md:py-0"}
-              additionalText={"view more"}
-              allowSubdomain={true}
-            />
-          </h2>
-        {:else}
-          <div
-            class="flex items-start flex-col justify-center gap-5 px-4 opacity-75"
-          >
-            <span class="text-lg">unable to fetch the latest stories... :(</span
-            >
-          </div>
-          <h2>
-            <Link
-              href={storiesUrl}
-              aClass={"flex gap-1 py-4 md:py-0"}
-              additionalText={"view my stories site to read more!"}
-              allowSubdomain={true}
-            />
-          </h2>
-        {/if}
-      </div>
-    </div>
-
     <div id="books" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h2 class="text-2xl">published books</h2>
