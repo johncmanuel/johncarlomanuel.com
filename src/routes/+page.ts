@@ -6,7 +6,7 @@ import type { Story } from "$lib/types/stories";
 import { decode } from "html-entities";
 
 export const load: PageLoad = async ({ fetch }) => {
-  const blogUrl = `${Links["blog"]}rss.xml`;
+  const blogUrl = `${Links["blog"]}index.xml`;
 
   const parser = new XMLParser();
   const numItemsToSend = 3;
