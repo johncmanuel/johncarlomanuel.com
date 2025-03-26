@@ -22,6 +22,7 @@
       "name": "bettercs",
       "url": "https://github.com/johncmanuel/bettercs",
       "desc": "A gamified web application designed to help CS students learn concepts through highly interactive activities for typical weed-out classes such as Data Structures and Computer Organization. FullyHacks 2024.",
+      "img_url": "/assets/projects/bettercs.webp",
       "tags": [
         "nextjs",
         "typescript",
@@ -33,6 +34,7 @@
       "name": "isabot",
       "url": "https://github.com/johncmanuel/isabot",
       "desc": "A Discord interactions and webhook bot for AR Club, a World of Warcraft guild in US-Shandris/Bronzebeard.",
+      "img_url": "/assets/projects/isabot.webp",
       "tags": [
         "python",
         "fastapi",
