@@ -22,7 +22,7 @@
       "name": "bettercs",
       "url": "https://github.com/johncmanuel/bettercs",
       "desc": "A gamified web application designed to help CS students learn concepts through highly interactive activities for typical weed-out classes such as Data Structures and Computer Organization. FullyHacks 2024.",
-      "tags": ["nextjs", "typescript", "react"],
+      "tags": ["Next.js", "TypeScript", "React"],
       "challenges": [
         "Creating a dynamic and interactive UI for the users",
         "Learning new technology for implmentation",
@@ -32,23 +32,25 @@
         "Gained exposure to new technologies",
         "Learned to adapt to new changes under time constraints",
         "Became more comfortable with working under pressure"
-      ]
+      ],
+      "img_url": "/assets/projects/bettercs.webp"
     },
     {
       "name": "isabot",
       "url": "https://github.com/johncmanuel/isabot",
       "desc": "A Discord interactions and webhook bot for AR Club, a World of Warcraft guild in US-Shandris/Bronzebeard.",
-      "tags": ["Deno", "TypeScript", "Discord API"],
+      "tags": ["deno", "typescript"],
       "challenges": [
-        "Managing technical complexity over time",
+        "Learning Discord webhooks and slash commands ",
         "Working with external APIs",
         "Rewriting from Python to Deno to solve serverless issues and simplify codebase"
       ],
       "outcomes": [
-        "Delivered a more reliable and efficient Discord bot",
+        "Delivered a more reliable and efficient Discord bot to the guild",
         "Improved code quality, optimization, and maintainability",
         "Learned more about Deno and its features"
-      ]
+      ],
+      "img_url": "/assets/projects/isabot.webp"
     },
     {
       "name": "RateMyLoo",
