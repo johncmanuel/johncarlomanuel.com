@@ -22,7 +22,7 @@
       "name": "bettercs",
       "url": "https://github.com/johncmanuel/bettercs",
       "desc": "A gamified web application designed to help CS students learn concepts through highly interactive activities for typical weed-out classes such as Data Structures and Computer Organization. FullyHacks 2024.",
-      "tags": ["Next.js", "TypeScript", "React"],
+      "tags": ["next.js", "typeScript", "react"],
       "challenges": [
         "Creating a dynamic and interactive UI for the users",
         "Learning new technology for implmentation",
