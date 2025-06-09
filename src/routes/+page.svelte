@@ -197,7 +197,7 @@
     </div>
     <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">recent registers</h1>
+        <h1 class="text-2xl">recent registers (blog posts)</h1>
         {#if recentPosts.length !== 0}
           <div
             class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75"
