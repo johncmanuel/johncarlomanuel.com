@@ -17,9 +17,6 @@ importers:
       fast-xml-parser:
         specifier: ^4.5.3
         version: 4.5.3
-      html-entities:
-        specifier: ^2.6.0
-        version: 2.6.0
       libwebring:
         specifier: github:diamondburned/libwebring#nightly
         version: https://codeload.github.com/diamondburned/libwebring/tar.gz/fb7adc7cb9eb2d447a91f8510013e70019f8502e
@@ -618,9 +615,6 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
-
-  html-entities@2.6.0:
-    resolution: {integrity: sha512-kig+rMn/QOVRvr7c86gQ8lWXq+Hkv6CbAH1hLu+RG338StTpE8Z0b44SDVaqVu7HGKf27frdmUYEs9hTUX/cLQ==}
 
   import-meta-resolve@4.1.0:
     resolution: {integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==}
@@ -1701,8 +1695,6 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
-
-  html-entities@2.6.0: {}
 
   import-meta-resolve@4.1.0: {}
 

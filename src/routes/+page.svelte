@@ -11,14 +11,21 @@
   import FullMoonTracker from "$components/FullMoonTracker/FullMoonTracker.svelte";
   import Marquee from "$components/Marquee/Marquee.svelte";
   import MarqueeItems from "$lib/public/marquee";
-  import { removeDoubleSlashes } from "$lib/utils/clean";
+  import Skills from "$components/Homepage/Skills.svelte";
+  import Projects from "$components/Homepage/Projects.svelte";
+  import Posts from "$components/Homepage/Posts.svelte";
+  import FartLabs from "$components/Homepage/FartLabs.svelte";
+  import Books from "$components/Homepage/Books.svelte";
+  import Footer from "$components/Footer/Footer.svelte";
 
   const currUrl = new URL($page.url).href;
   const date = new Date();
 
   export let data: PageData;
   const recentPosts = data.recentPosts ?? [];
-  const recentStories = data.recentStories ?? [];
+  const skills = data.skills ?? [];
+  const projects = data.projects ?? [];
+  const books = data.books ?? [];
 
   const name = "John Carlo Manuel";
   const desc = "my personal website :)";
@@ -36,7 +43,6 @@
   const youtubeUrl = Links["youtube"];
   const emailUrl = Links["email"];
   const blogUrl = Links["blog"];
-  const storiesUrl = Links["stories"];
 
   const personaQuotes = MarqueeItems.persona;
 </script>
@@ -139,153 +145,16 @@
         <FullMoonTracker {date} />
       </div>
     </div>
-    <div id="skills" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">skills</h1>
-        <div
-          class="flex items-start flex-col md:flex-row flex-wrap justify-start gap-3 md:gap-2 px-4"
-        >
-          {#each Self.skills as skill}
-            <span
-              class="flex bg-yellow-1 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-grey-1"
-            >
-              <span class="dark:opacity-75">{skill}</span>
-            </span>
-          {/each}
-        </div>
-      </div>
-    </div>
-    <div id="projects" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">featured projects</h1>
-        <ul class="flex items-start flex-col justify-center gap-8 px-4">
-          {#each Self.projects as project}
-            <li class="flex flex-col gap-2 md:gap-1">
-              <Link
-                href={project.url}
-                additionalText={project.name}
-                aClass={"flex flex-row flex-wrap gap-1"}
-                additionalTextClass={"text-lg md:text-base font-bold"}
-              />
-              <p class="text-balance dark:opacity-75">{project.desc}</p>
-              <div class="flex flex-row gap-1 flex-wrap">
-                {#each project.tags as tag}
-                  <span
-                    class="flex bg-yellow-1 dark:bg-grey-1 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
-                    ><span class="opacity-75">{tag}</span></span
-                  >
-                {/each}
-              </div>
-            </li>
-          {/each}
-        </ul>
-        <Link
-          href={githubUrl}
-          aClass={"flex gap-1 py-4 md:py-0"}
-          additionalText={"view more of my projects"}
-          allowSubdomain={true}
-        />
-      </div>
-    </div>
-    <div id="registers" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h1 class="text-2xl">recent registers (blog posts)</h1>
-        {#if recentPosts.length !== 0}
-          <div class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75">
-            {#each recentPosts as post}
-              <article class="flex flex-col gap-1">
-                <Link
-                  href={post.link}
-                  aClass={"flex flex-row flex-wrap gap-1"}
-                  additionalText={post.title}
-                  additionalTextClass={"text-lg font-bold"}
-                  omitHref={true}
-                />
-                <p>{post.description}</p>
-                <p class="text-sm">{post.pubDate}</p>
-              </article>
-            {/each}
-          </div>
-          <h2>
-            <Link
-              href={blogUrl}
-              aClass={"flex gap-1 py-4 md:py-0"}
-              additionalText={"view more"}
-              allowSubdomain={true}
-            />
-          </h2>
-        {:else}
-          <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
-            <span class="text-lg">unable to fetch the latest registers... :(</span>
-          </div>
-          <h2>
-            <Link
-              href={blogUrl}
-              aClass={"flex gap-1 py-4 md:py-0"}
-              additionalText={"view my blog to view them!"}
-              allowSubdomain={true}
-            />
-          </h2>
-        {/if}
-      </div>
-    </div>
-
-    <div id="fartlabs" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-6 md:gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h2 class="text-2xl">fart labs</h2>
-        <p class="px-4 md:px-0 dark:opacity-75">
-          Interested in working on some cool software through open source? Join our community!
-        </p>
-        <div class="flex flex-col gap-6 md:gap-1 px-4 md:px-0">
-          <Link
-            href={Links["fartlabs"]}
-            aClass={"flex flex-row flex-wrap gap-1"}
-            additionalText={"Click me to read more!"}
-            additionalTextClass={"text-lg font-bold"}
-            omitHref={false}
-          />
-          <Link
-            href={"https://go.fart.tools/chat"}
-            aClass={"flex flex-row flex-wrap gap-1"}
-            additionalText={"Join our Discord server!"}
-            additionalTextClass={"text-lg font-bold"}
-            omitHref={false}
-          />
-        </div>
-      </div>
-    </div>
-
-    <div id="books" class="flex flex-col gap-4 max-w-full px-4">
-      <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-        <h2 class="text-2xl">published books</h2>
-        <div class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75">
-          <article class="flex flex-col gap-1">
-            <Link
-              href={Links["20years"]}
-              aClass={"flex flex-row flex-wrap gap-1"}
-              additionalText={"20 Years"}
-              additionalTextClass={"text-lg font-bold"}
-              omitHref={false}
-            />
-            <p>
-              {"A fantasy, adventure novel written and published in 2020."}
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-
+    <Skills {skills} />
+    <Projects {projects} {githubUrl} />
+    <Posts {recentPosts} {blogUrl} />
+    <FartLabs />
+    <Books {books} />
     <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
         <Webring src={skylineCSCWebring} />
       </div>
     </div>
-    <div id="footer" class="flex flex-col gap-4 max-w-full px-4">
-      <aside class="mx-auto">
-        <p class="text-center">
-          Copyright © {date.getFullYear()} John Carlo Manuel - All rights reserved.
-        </p>
-      </aside>
-    </div>
+    <Footer {date} />
   </div>
 </div>
