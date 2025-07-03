@@ -3,7 +3,6 @@
   import { page } from "$app/stores";
   import { GitHub, LinkedIn, Email, Twitter, Youtube } from "$components/Icons/SocialMedia";
   import Webring from "$components/Webring/Webring.svelte";
-  import Self from "$lib/public/self";
   import Link from "$components/Link/Link.svelte";
   import Links from "$lib/public/links";
   import ThemeToggle from "$components/ThemeToggle/ThemeToggle.svelte";
@@ -26,6 +25,7 @@
   const skills = data.skills ?? [];
   const projects = data.projects ?? [];
   const books = data.books ?? [];
+  const webrings = data.webring ?? [];
 
   const name = "John Carlo Manuel";
   const desc = "my personal website :)";
@@ -152,7 +152,7 @@
     <Books {books} />
     <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
-        <Webring src={skylineCSCWebring} />
+        <Webring {webrings} />
       </div>
     </div>
     <Footer {date} />
