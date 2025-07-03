@@ -60,9 +60,7 @@
     </span>
 
     <!-- no need to use Link component for this -->
-    <a href="/" aria-label="Button to go back to homepage"
-      >Click me to go back home!</a
-    >
+    <a href="/" aria-label="Button to go back to homepage">Click me to go back home!</a>
   </div>
 
   <!-- <h2 class="flex flex-row text-4xl font-bold pb-10 text-center">Go home?</h2>

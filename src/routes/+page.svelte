@@ -1,13 +1,7 @@
 <script lang="ts">
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import {
-    GitHub,
-    LinkedIn,
-    Email,
-    Twitter,
-    Youtube,
-  } from "$components/Icons/SocialMedia";
+  import { GitHub, LinkedIn, Email, Twitter, Youtube } from "$components/Icons/SocialMedia";
   import Webring from "$components/Webring/Webring.svelte";
   import Self from "$lib/public/self";
   import Link from "$components/Link/Link.svelte";
@@ -57,20 +51,18 @@
     description: desc,
     image: avatar,
     imageAlt: avatarAlt,
-    handle: "@johncmanuel",
+    handle: "@johncmanuel"
   }}
   openGraph={{
     title: name,
     description: desc,
     url: currUrl,
     image: avatar,
-    imageAlt: avatarAlt,
+    imageAlt: avatarAlt
   }}
 />
 
-<div
-  class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto"
->
+<div class="flex gap-10 md:gap-4 py-10 flex-col w-full max-w-[60rem] min-h-screen mx-auto">
   <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col sm:flex-row">
     <div class="mx-auto overflow-clip aspect-square w-full">
       <img
@@ -90,9 +82,9 @@
           >California State University, Fullerton</b
         >. I'm interested in <b>full-stack development</b>,
         <b>game development</b>, and
-        <b>distributed systems</b>. Outside of engineering, I enjoy diving into
-        creative endeavors such as writing and worldbuilding. I'm also a cool
-        gamer that mainly plays (MMO)RPGs and narrative-driven games.
+        <b>distributed systems</b>. Outside of engineering, I enjoy diving into creative endeavors
+        such as writing and worldbuilding. I'm also a cool gamer that mainly plays (MMO)RPGs and
+        narrative-driven games.
       </p>
       <div class="flex gap-3">
         <a href={githubUrl} target="_blank" aria-label="GitHub">
@@ -199,9 +191,7 @@
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">recent registers (blog posts)</h1>
         {#if recentPosts.length !== 0}
-          <div
-            class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75"
-          >
+          <div class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75">
             {#each recentPosts as post}
               <article class="flex flex-col gap-1">
                 <Link
@@ -225,12 +215,8 @@
             />
           </h2>
         {:else}
-          <div
-            class="flex items-start flex-col justify-center gap-5 px-4 opacity-75"
-          >
-            <span class="text-lg"
-              >unable to fetch the latest registers... :(</span
-            >
+          <div class="flex items-start flex-col justify-center gap-5 px-4 opacity-75">
+            <span class="text-lg">unable to fetch the latest registers... :(</span>
           </div>
           <h2>
             <Link
@@ -245,13 +231,10 @@
     </div>
 
     <div id="fartlabs" class="flex flex-col gap-4 max-w-full px-4">
-      <div
-        class="flex gap-6 md:gap-4 max-w-full overflow-hidden md:px-4 flex-col"
-      >
+      <div class="flex gap-6 md:gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h2 class="text-2xl">fart labs</h2>
         <p class="px-4 md:px-0 dark:opacity-75">
-          Interested in working on some cool software through open source? Join
-          our community!
+          Interested in working on some cool software through open source? Join our community!
         </p>
         <div class="flex flex-col gap-6 md:gap-1 px-4 md:px-0">
           <Link
@@ -275,9 +258,7 @@
     <div id="books" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h2 class="text-2xl">published books</h2>
-        <div
-          class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75"
-        >
+        <div class="flex items-start flex-col justify-center gap-5 px-4 dark:opacity-75">
           <article class="flex flex-col gap-1">
             <Link
               href={Links["20years"]}

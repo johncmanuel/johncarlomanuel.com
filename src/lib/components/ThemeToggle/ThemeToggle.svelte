@@ -25,8 +25,7 @@
   if (browser) {
     const isAlreadyDark =
       localStorage.getItem(theme) === dark ||
-      (!(theme in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
+      (!(theme in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
     if (isAlreadyDark) {
       document.documentElement.classList.add(dark);
       darkMode = true;

@@ -1,10 +1,5 @@
 <script lang="ts">
-  import {
-    isFullMoon,
-    getLunarAge,
-    getLunarAgePercent,
-    getMoonPhaseEmoji,
-  } from "./lunar";
+  import { isFullMoon, getLunarAge, getLunarAgePercent, getMoonPhaseEmoji } from "./lunar";
   import { MoonPhaseEmoji, LunarAgeBounds } from "./lunarenums";
   import { onMount } from "svelte";
 
