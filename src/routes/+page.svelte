@@ -31,8 +31,6 @@
   const desc = "my personal website :)";
   const avatar = "/android-chrome-512x512.png";
   const avatarAlt = "picture of John Carlo Manuel";
-  const skylineCSCWebring =
-    "https://raw.githubusercontent.com/Skyline-College-Computer-Science-Club/clubwebring/master/webring.json";
 
   const heroImgPath = "/assets/avatar.jpg";
 
