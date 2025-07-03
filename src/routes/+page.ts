@@ -4,8 +4,22 @@ import type { Post } from "$lib/types/post";
 import Links from "$lib/public/links";
 
 export const load: PageLoad = async ({ fetch }) => {
-  // todo: get link from jsonldsite rather than links
-  const blogUrl = `${Links["blog"]}index.xml`;
+  const jsonLdSite = Links["id"];
+  const ld = await fetchPersonalJsonId(jsonLdSite, fetch);
+  if (!ld) {
+    console.error("Failed to fetch personal JSON ID data.");
+    return null;
+  }
+
+  const graph = ld["@graph"][0] || [];
+
+  const socials = graph.socials || {};
+  const skills = graph.skills || [];
+  const projects = graph.projects || [];
+  const webring = graph.webring || [];
+  const books = graph.books || [];
+
+  const blogUrl = `${socials["blog"]}index.xml`;
   const numItemsToSend = 3;
   const parser = new XMLParser();
 
@@ -18,19 +32,7 @@ export const load: PageLoad = async ({ fetch }) => {
   });
   const recentPosts = blogPosts.slice(0, numItemsToSend);
 
-  const jsonLdSite = "https://id.johncarlomanuel.com";
-  const ld = await fetchPersonalJsonId(jsonLdSite, fetch);
-  if (!ld) {
-    console.error("Failed to fetch personal JSON ID data.");
-    return { recentPosts };
-  }
-  const graph = ld["@graph"][0] || [];
-  const skills = graph.skills || [];
-  const projects = graph.projects || [];
-  const webring = graph.webring || [];
-  const books = graph.books || [];
-
-  return { recentPosts, skills, projects, webring, books };
+  return { recentPosts, skills, projects, webring, books, socials };
 };
 
 const fetchRSS = async (url: string, loadFetch: any) => {
