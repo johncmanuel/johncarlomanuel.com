@@ -15,6 +15,7 @@
             additionalText={project.name}
             aClass={"flex flex-row flex-wrap gap-1"}
             additionalTextClass={"text-lg md:text-base font-bold"}
+            allowSubdomain={true}
           />
           <p class="text-balance dark:opacity-75">{project.desc}</p>
           <div class="flex flex-row gap-1 flex-wrap">
