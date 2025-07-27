@@ -6,9 +6,10 @@
 
 <div id="fartlabs" class="flex flex-col gap-4 max-w-full px-4">
   <div class="flex gap-6 md:gap-4 max-w-full overflow-hidden md:px-4 flex-col">
-    <h2 class="text-2xl">fartLabs</h2>
+    <h2 class="text-2xl">FartLabs</h2>
     <p class="px-4 md:px-0 dark:opacity-75">
-      Interested in working on some cool software through open source? Join our community!
+      Interested in working on some cool software for TypeScript developers through open source?
+      Join our community!
     </p>
     <div class="flex flex-col gap-6 md:gap-1 px-4 md:px-0">
       <Link

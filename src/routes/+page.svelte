@@ -137,17 +137,17 @@
       </div>
     </div>
   -->
+    <Skills {skills} />
+    <Projects {projects} {githubUrl} />
+    <Posts {recentPosts} {blogUrl} />
+    <FartLabs />
+    <Books {books} />
     <div id="fullmoontracker" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden md:px-4 flex-col">
         <h1 class="text-2xl">full moon tracker</h1>
         <FullMoonTracker {date} />
       </div>
     </div>
-    <Skills {skills} />
-    <Projects {projects} {githubUrl} />
-    <Posts {recentPosts} {blogUrl} />
-    <FartLabs />
-    <Books {books} />
     <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
         <Webring {webrings} />
