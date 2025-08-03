@@ -41,6 +41,7 @@
   const youtubeUrl = Links["youtube"];
   const emailUrl = Links["email"];
   const blogUrl = Links["blog"];
+  const xUrl = Links["x"];
 
   const personaQuotes = MarqueeItems.persona;
 </script>
