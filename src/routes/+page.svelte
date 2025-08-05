@@ -1,7 +1,7 @@
 <script lang="ts">
   import MetaTags from "$components/SEO/MetaTags.svelte";
   import { page } from "$app/stores";
-  import { GitHub, LinkedIn, Email, Twitter, Youtube } from "$components/Icons/SocialMedia";
+  import { GitHub, LinkedIn, Email, X, Youtube } from "$components/Icons/SocialMedia";
   import Webring from "$components/Webring/Webring.svelte";
   import Link from "$components/Link/Link.svelte";
   import Links from "$lib/public/links";
@@ -36,7 +36,6 @@
 
   const resumeUrl = Links["resume"];
   const githubUrl = Links["github"];
-  const twitterUrl = Links["twitter"];
   const linkedInUrl = Links["linkedin"];
   const youtubeUrl = Links["youtube"];
   const emailUrl = Links["email"];
@@ -98,8 +97,8 @@
         <a href={linkedInUrl} target="_blank" aria-label="LinkedIn">
           <LinkedIn />
         </a>
-        <a href={twitterUrl} target="_blank" aria-label="Twitter">
-          <Twitter />
+        <a href={xUrl} target="_blank" aria-label="X">
+          <X />
         </a>
         <a href={youtubeUrl} target="_blank" aria-label="YouTube">
           <Youtube />
