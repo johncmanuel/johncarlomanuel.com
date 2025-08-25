@@ -16,6 +16,7 @@
   import FartLabs from "$components/Homepage/FartLabs.svelte";
   import Books from "$components/Homepage/Books.svelte";
   import Footer from "$components/Footer/Footer.svelte";
+  import Monitor from "$components/Monitor/Monitor.svelte";
 
   const currUrl = new URL($page.url).href;
   const date = new Date();
@@ -148,6 +149,7 @@
         <FullMoonTracker {date} />
       </div>
     </div>
+    <Monitor />
     <div id="webring" class="flex flex-col gap-4 max-w-full px-4">
       <div class="flex gap-4 max-w-full overflow-hidden px-4 flex-col">
         <Webring {webrings} />
