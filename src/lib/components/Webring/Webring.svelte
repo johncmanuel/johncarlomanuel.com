@@ -17,7 +17,7 @@
       <webring-element name={wr.name} src={wr.link} class="py-4">
         <section class="webring flex flex-col center space-y-6">
           <div class="flex justify-center items-center">
-            <div class="ring text-center text-lg" />
+            <div class="ring text-center text-lg"></div>
             <a class="ml-2 link link-hover text-lg text-center" href={wr.link} target="_blank"
               >(src)</a
             >
@@ -27,7 +27,7 @@
               class="left link link-hover text-left text-base place-self-start before:content-['←']"
               target="_blank"
               href={"#"}>a</a
-            > <span class="middle text-center text-base place-self-center" />
+            > <span class="middle text-center text-base place-self-center"></span>
             <a
               class="right link link-hover text-right text-base place-self-end after:content-['→']"
               target="_blank"
